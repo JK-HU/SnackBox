@@ -77,4 +77,14 @@
         event.stopPropagation();
     });
 
+    // 弹框 零食盒子商品
+    $('.card').on('click','.commodity',function() {
+        // 点击弹框商品,获取商品ID
+        let commodid = $(this).attr('data-commodid');
+
+        $('.card').attr('style','display:none');
+        $('.cover').attr('style','display:none');
+
+    });
+
 })();

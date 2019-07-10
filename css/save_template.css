@@ -297,7 +297,7 @@
     z-index: 9999;
     padding: 20px 3px 3px 3px;
     overflow: scroll;
-    display: block
+    display: none
 }
 .card .search{width: auto;line-height: 35px;}
 .card .search input{width: 62%;line-height: 31px;padding: 0 8px;border-radius: 5px;background-color: #e8e7e7;margin-right: 5px;}

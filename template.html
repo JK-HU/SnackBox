@@ -196,8 +196,9 @@
         <div class="buhuo_list">
             <div class="buhuo_list_con">
                 <span>已经补货列表, 50条</span>
-                <a href="javascript:" class="batchOperation">批量操作</a>
-                <span href="javascript:" class="AllElection">全选</span>
+                <a href="javascript:" class="batchOperation">批量操作  </a>
+                <span class="AllElection" data-allelection='false' style="float: left">全选</span>
+                <div class="clear"></div>
             </div>
         </div>
         <!-- 已经补货列表结束 -->
@@ -221,7 +222,7 @@
                 <a class="sign" style="color: #0bb20c" href="details_bhuo.html">查看详情</a>
             </div>
             <div class="stock_num" style="background: #fff;color: #0bb20c;font-size: 17px;">
-                <a class="commodity_refund" style="color: #0bb20c" href="modify_template.html">修改模板</a>
+                <a class="commodity_refund" style="color: #0bb20c" href="save_template.html">修改模板</a>
             </div>
             <div class="stock_num" style="background: #fff;color: red;font-size: 17px;">
                 <span class="commodity_refund_tetele">删除</span>
@@ -232,20 +233,23 @@
         </div>
         <!-- 增加库存和减少库存结束 -->
 
-        <!-- 喜好模板弹框 -->
+        <!-- 喜好模板弹框; 点击tab选项卡为选喜好模板时,显示这个弹框 -->
         <div class="card">
             <p style="font-size: 16px">请选择你需要备货的模板</p>
+            <div class="search">
+                <input type="text" placeholder="输入搜索零食盒子名">
+                <button class="searchBtn">搜索</button>
+            </div>
             <div class="templateList">
                 <ul>
-                    <li>
+                    <li data-commodId="2" class="commodity">
                         <a href="javascript:">
-                            <span class="templateName">模板名称</span>2中商品,共9元 7月8日
+                            <span class="templateName">模板名称</span> 剩余9元
                         </a>
                     </li>
-
                 </ul>
             </div>
-            <span class="card_cancel">取消</span>
+            <!-- <span class="card_cancel">取消</span> -->
         </div>
         <!-- 喜好模板弹框结束 -->
 
@@ -364,6 +368,15 @@
         $('.tab').on('click', 'a', function () {
             var swiper_a_num = 0;
             var tabType = $(this).attr('data-type'); //当前tabs的类型
+
+            if(tabType == 'yips') {
+                $('.card').attr('style','display:block');
+                $('.cover').attr('style','display:block')
+            }
+            if (tabType !== 'yips') {
+                $('.card').attr('style','display:none');
+                $('.cover').attr('style','display:none')
+            }
             
             tabBtn(tabType);            
 

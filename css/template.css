@@ -11,7 +11,7 @@
     margin: 0 auto;
 }
 .deliver_search .deliver_search_con input{
-    width: 170px;
+    width: 132px;
     height: 34px;
     display: inline-block;
     padding: 0 15px;
@@ -73,7 +73,7 @@
     border-top: 1px solid #dddbdb;
 }
 .sort .sort_con a{
-    width: 147px;
+    width: 125px;
     height: 45px;
     line-height: 45px;
     display: inline-block;
@@ -130,7 +130,7 @@
 
 }
 .buhuo_list .buhuo_list_con a{
-    width: 56%;
+    width: 40%;
     height: 40px;
     display: inline-block;
     line-height: 40px;
@@ -233,7 +233,7 @@
     position: absolute;
     top: 0;
     background: rgba(0,0,0,0.56);
-    z-index: 95;
+    z-index: 1000;
     display: none;
 }
 /* 增加库存和减少库存 */
@@ -311,8 +311,13 @@
     z-index: 9999;
     padding: 20px 3px 3px 3px;
     overflow: scroll;
-    display: block
+    display: none
 }
+
+.card .search{width: auto;line-height: 35px;}
+.card .search input{width: 62%;line-height: 31px;padding: 0 8px;border-radius: 5px;background-color: #e8e7e7;margin-right: 5px;}
+.card .search .searchBtn{width: 20%;height: auto;line-height: 28px;border: none;background: #0bb20c;color: #fff;border-radius: 5px;}
+
 .card .templateList{width: auto;height: auto}
 .card .templateList ul{width: 95%;height: auto;margin: 0 auto}
 .card .templateList ul li{width: 100%;line-height: 35px;text-align: left;border-bottom: 1px solid rgb(236, 236, 236)}

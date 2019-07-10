@@ -18,23 +18,25 @@
         event.stopPropagation();
     });
 
-    // 图标显示隐藏
-    // var iconFlag = false;
-    // $('.cell_c').bind('click',function() {
-    //     if (iconFlag) {
-    //         $(this).find('i').removeClass('iconfont iconxuanz');
-    //         $(this).find('i').addClass('iconfont iconwxuanz');
-            
-    //         iconFlag = false;
-    //         return false;
-    //     }
-    //     if (!iconFlag) {
-    //         $(this).find('i').removeClass('iconfont iconwxuanz');
-    //         $(this).find('i').addClass('iconfont iconxuanz');
-    //         iconFlag = true;
-    //         return false;
-    //     }
-    // });
+    // 全选按钮
+    $('.AllElection').click(function() {
+        var dataAllelection = $(this).attr('data-allelection'); //全选状态
+
+        if ($(this).attr('data-allelection') == 'true') {
+            $('.cell_c').find('i').removeClass('iconfont iconxuanz');
+            $('.cell_c').find('i').addClass('iconfont iconwxuanz');
+            $('.cell_c').attr('data-iconFlag','no');
+            $(this).attr('data-allelection','false');
+            return false;
+        }
+        if ($(this).attr('data-allelection') == 'false') {
+            $('.cell_c').find('i').removeClass('iconfont iconwxuanz');
+            $('.cell_c').find('i').addClass('iconfont iconxuanz');
+            $('.cell_c').attr('data-iconFlag','yes');
+            $(this).attr('data-allelection','true');
+            return false;
+        }
+    });
 
     // 排序-正序
     var sortFlag = false;
@@ -82,7 +84,8 @@
         qtFlag = false;
         return false;
     });
-
+    
+    
 
     // 弹框
     $('.con').on('click','.cell_a',function(event) {
@@ -130,6 +133,16 @@
             return false;
         }
     });
+
+    // 弹框商品 ; 点击弹框商品后,弹框消失
+    $('.card').on('click','.commodity',function() {
+        $('.card').attr('style','display:none');
+        $('.cover').attr('style','display:none');
+        
+        window.location.href = 'save_template.html';
+    })
+
+
 
 })();
 
