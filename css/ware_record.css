@@ -1,0 +1,38 @@
+.search{width: 100%;height: auto;display: block;position: fixed;top: 0;z-index: 99;background: #fff;padding: 8px 0}
+.search .search_ipt{width: 65%;line-height: 35px;padding: 0 10px;background: #f7f7f7;border-radius: 4px;}
+.search .btn_search{width: 20%;border: none;line-height: 28px;border-radius: 4px;background: none;color: green;font-size: 17px;}
+
+.cell{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 96px auto 5px auto;
+}
+.cell a{
+    display: block;
+    width: auto;
+    height: auto;
+    color: #000;
+    padding: 7px 12px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #f1ecec;
+}
+.cell a .cell_con{
+    width: 100%;
+    height: auto;
+    display: flex
+}
+.cell a .cell_con .cell_con_l{
+    flex: 3;
+}
+.cell a .cell_con .cell_con_l span{
+    display: block;
+    height: auto;
+    text-align: left;
+}
+
+.cell a .cell_con .cell_con_r{
+    flex: 1;
+}
+
+

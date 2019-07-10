@@ -1,0 +1,28 @@
+.wrap{width: 100%;height: 100%;}
+.wrap p{width:auto;line-height:22px;padding: 9px 12px;border-bottom: 1px solid #f3f2f2}
+.card{width: auto;height: 100%;margin: 0 auto;background: #fff;padding: 5px 16px}
+.card p{width: 94%;line-height: 27px;font-size: 16px;margin: 0 auto;}
+.card .card_line{width: auto;line-height: 40px;border-bottom: 1px solid #f3f2f2;display: flex}
+.card .card_line span{flex: 1;color: #3498DB;font-size: 15px}
+.card .card_line .name{flex: 3;color: #000}
+
+/* 补回 弹框 */
+.cover{position: fixed;display: none;width: 100%;height: 100%;top: 0;background: rgba(0,0,0,.6)}
+.alertCard{
+    position: fixed;
+    width: 85%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: #fafafc;
+    text-align: center;
+    border-radius: 3px;
+    padding: 15px 5px;
+    overflow: hidden;
+    display: none;
+    z-index: 999;
+}
+.alertCard span{display: block;margin: 12px 4px;font-size: 15px;padding-bottom: 15px;;border-bottom: 1px solid rgb(240, 240, 240)}
+.alertCard button{width: 92px;line-height: 29px;border: none;border-radius: 5px;}
+.alertCard .true{background: #0bb20c;color: #fff}

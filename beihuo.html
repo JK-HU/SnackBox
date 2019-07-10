@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>校园零食</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/beihuo.css">
+    <link rel="stylesheet" href="./css/iconfont_peis.css">
+    <link rel="stylesheet" href="./css/iconfont_beihuo.css">
+    <link rel="stylesheet" type="text/css" href="./css/swiper-3.3.1.min.css" />
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: hidden;
+            background: #fff
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            height: calc(100vh - 120px)
+        }
+
+        .swiper-slide {
+            height: auto;
+            background: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .list-group {
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+        /* 下拉刷新结束 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 搜索框 -->
+        <div class="deliver_search">
+            <div class="deliver_search_con">
+                <input type="text" class="search_deliver" placeholder="输入搜索名称" />
+                <button class="search_btn">搜索</button>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+        <!-- 搜索框结束 -->
+
+        <!-- 盒子备注 -->
+        <div class="choice_beizhu">
+            <div class="choice_beizhu_con">
+                <span>盒子备注</span>
+                <a href="javascript:">修改</a>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+        <!-- 盒子备注结束 -->
+
+        <!-- 配送单备注 -->
+        <div class="psd_bz">
+            <div class="psd_bz_con">
+                <input type="text" name="psd_bz_con" class="psd_bz_ipt" id="psd_bz_con" placeholder="配送单备注" />
+            </div>
+        </div>
+        <!-- 配送单备注结束 -->
+
+        <!-- swiper2 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper w">
+                <div class="swiper-slide d" style="margin-top:0">
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper" id="swiper_data">
+                            <div class="swiper-slide list-group" data-attrs="group_a">
+                                <div class="con">
+                                    <p style="width: 95%;text-align:left;margin:0 auto;">其他</p>
+                                    <a href="javascript:" class="commodity_a" data-commodId="1">
+                                        <div class="product">
+                                            <div class="product_top">
+                                                <img src="./images/product_1.jpg" alt="" />
+                                                <div class="product_t_deail">
+                                                    <span style="margin-left:10px;">葡萄汁</span> <span>总库存</span> <span>9955</span> <span>售价3</span> <span>进货价2.5</span>
+                                                </div>
+                                            </div>
+                                            <div class="product_bot">
+                                                <span class="add_product_btn">增加库存</span>
+                                                <span class="add_i"><i class="iconfont iconjia"></i></span>
+                                                <span class="add_product_text">0</span>
+                                                <span class="reduce_i"><i class="iconfont iconjian"></i></span>
+                                                <div style="clear: both"></div>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                    </a>
+
+                                    <a href="javascript:" class="commodity_a" data-commodId="1">
+                                        <div class="product">
+                                            <div class="product_top">
+                                                <img src="./images/product_1.jpg" alt="" />
+                                                <div class="product_t_deail">
+                                                    <span style="margin-left:10px;">葡萄汁</span> <span>总库存</span> <span>9955</span> <span>售价3</span> <span>进货价2.5</span>
+                                                </div>
+                                            </div>
+                                            <div class="product_bot">
+                                                <span class="add_product_btn">增加库存</span>
+                                                <span class="add_i"><i class="iconfont iconjia"></i></span>
+                                                <span class="add_product_text">0</span>
+                                                <span class="reduce_i"><i class="iconfont iconjian"></i></span>
+                                                <div style="clear: both"></div>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+        <!-- 遮盖层 -->
+        <div class="cover"></div>
+        <!-- 遮盖层结束 -->
+
+        <!-- 增加库存和减少库存 -->
+        <div class="stock" style="display: none">
+            <span>葡萄汁出库</span>
+            <div class="stock_num" style="background: #fff">
+                <span>数量</span>
+                <input type="text" name="stock_num_ipt" class="stock_num_ipt" placeholder="修改数量" />
+            </div>
+            <div class="stock_num" style="margin-top: 15px;">
+                <button class="stock_cancel">取消</button>
+                <button class="stock_success">完成</button>
+            </div>
+        </div>
+        <!-- 增加库存和减少库存结束 -->
+
+        <!-- 底部显示总金额 -->
+        <div class="footer">
+            <p>给新21号403备货,零食盒子剩余金额: 16元</p>
+            <div class="footer_con">
+                <div class="footer_l">
+                    <a href="javascript:" class="beihuo_a">备货</a>
+                    <span class="beihuo_money">0 </span>
+                </div>
+                <div class="footer_r">
+                    <a href="javascript:" class="auto_beihuo">自动备货</a>
+                    <a href="javascript:" class="moban">模板</a>
+                    <a href="javascript:" class="preview_peis">生成配送单</a>
+                    <!-- <a href="preview_ps.html" class="preview_peis">生成配送单</a> -->
+                </div>
+            </div>
+        </div>
+        <!-- 底部显示总金额结束 -->
+
+        <!-- 增加库存和减少库存 -->
+        <div class="stock" style="display: none">
+            <span>葡萄汁出库</span>
+            <div class="stock_num" style="background: #fff">
+                <span>数量</span>
+                <input type="text" name="stock_num_ipt" class="stock_num_ipt" placeholder="修改数量" />
+            </div>
+            <div class="stock_num" style="margin-top: 15px;">
+                <button class="stock_cancel">取消</button>
+                <button class="stock_success">完成</button>
+            </div>
+        </div>
+        <!-- 增加库存和减少库存结束 -->
+
+        <!-- 点击模板出现模板弹框列表 -->
+        <div class="card">
+            <p style="font-size: 16px">请选择你需要备货的模板</p>
+            <div class="templateList">
+                <ul>
+                    <li class="templateName" data-templateId="9">
+                        <a href="javascript:" >
+                            <span class="templateName">模板名称</span>2中商品,共9元 7月8日
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <span class="card_cancel">取消</span>
+        </div>
+        <!-- 点击模板出现模板弹框列表结束 -->
+
+        <!-- 自动备货按钮 -->
+        <div class="autoBeiHuo">
+            <span class="hava_bh">请选择你需要的备货模式，例如你需要备货的零食盒子中剩余4个可乐，备货模板中可乐数量是10个。选择追加模式会备货6个可乐，选择固定模式会备货10个。</span>
+            <a href="modify_template.html" class="zj_ms" data-type='zj'>追加模式</a>
+            <a href="modify_template.html" class="gd_ms" data-type='gd'>固定模式</a>
+        </div>
+        <!-- 自动备货结束 -->
+
+        <!-- 模板保存成功 -->
+        <div class="stockTrmalateb">
+            <i class="iconfont iconxuanz"></i>
+            <p>模板保存成功</p>
+            <a href="template.html">查看模板列表</a>
+            <a href="javascript:" class="canel_tb" style="border-bottom: 1px solid #ddd">继续制作模板</a>
+        </div>
+        <!-- 模板保存成功结束 -->
+
+
+
+    </div>
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/beihuo.js"></script>
+    <script type="text/javascript" src="./js/swiper-3.4.0.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var loadFlag = true;
+        var onloadnum = 5; //页面加载时获取的个数
+        var swiper_a_num = 0; //上拉或下拉加载时递增的数
+        var swipersize = 5; //上拉或下拉时每次加载的个数
+
+        // 页面加载
+        document.onreadystatechange = function () {
+            if (document.readyState == 'complete') {
+
+            }
+        }
+
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            scrollbar: '.swiper-scrollbar',
+            slidesPerView: 'auto',
+            mousewheelControl: true,
+            freeMode: true,
+            onTouchMove: function (swiper) { //手动滑动中触发
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+            },
+            onTouchEnd: function (swiper) {
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+
+                var identName = document.getElementsByClassName('swiper-slide-active')[0];
+
+
+
+                // 上拉加载
+                if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                    
+                    // ajax_common(tabId, onloadnum, swipersize);
+                }
+                return false;
+            }
+        });
+
+        // mySwiper2滑动不用了但不能注释
+        var mySwiper2 = new Swiper('.swiper-container2', {
+            onTransitionEnd: function (swiper) {
+                mySwiper.update();
+            }
+        });
+
+        // 切换页面
+        $('.tab').on('click', 'a', function () {
+            var swiper_a_num = 0;
+
+
+            $('.swiper-slide-active').eq(0).html(''); //清空
+            $(this).addClass('active').siblings('a').removeClass('active');
+
+            mySwiper2.slideTo($(this).index(), 500, false);
+
+            // ajax_common(tabId, onloadnum, swipersize);
+            mySwiper.update(); // 重新计算高度;
+        });
+
+        //上拉,切换页面时用于获取数据
+        function ajax_common() {
+
+            // $.ajax({
+            //     url : '',
+            //     type : 'POST',
+            //     data : {
+            //         'tabId' : tabId,
+            //         'onloadnum' : onloadnum,
+            //         'swipersize' : swipersize
+            //     },
+            //      success : function() {},
+            //      error : function() {}
+            // });
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>校园零食</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/qx_beihuo.css">
+</head>
+<body>
+
+    <!-- qx_beihuo.html 点击全选后进入备货页面 -->
+    
+    <div class="wrap">
+        <p>以下盒子已存在配送单，此次不能生成新配送单，你可以将这些盒子的配送单补回仓库，或者这次不给这些盒子备货 </p>
+        <div class="card">
+            <p>盒子名称</p>
+            <div class="card_line" data-hzId='1'>
+                <span class="name">盒子名</span>
+                <span class="bh_ck">补回仓库</span>
+                <span class="by_bh">不用备货</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 补回仓库弹框 -->
+    <div class="cover"></div>
+    <div class="alertCard">
+        <span>确定将配送单商品补回仓库吗</span>
+
+        <button class="cancel">取消</button>
+        <button class="true">确定</button>
+    </div>
+    <!-- 补回仓库弹框结束 -->
+
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/qx_beihuo.js"></script>
+</body>
+</html>

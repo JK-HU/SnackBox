@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>校园零食</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/retail_admin.css">
+    <link rel="stylesheet" href="./css/iconfont_peis.css">
+    <link rel="stylesheet" type="text/css" href="./css/swiper-3.3.1.min.css" />
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .tab {
+            display: flex;
+            line-height: 51px;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            z-index: 99;
+            border-bottom: 1px #ccc solid;
+            background: #fff;
+        }
+
+        .tab a {
+            width: 25%;
+            background: #fff;
+            text-align: center;
+            color: #000;
+        }
+
+        .tab .active {
+            border-bottom: 1px #f50 solid;
+            color: #f50;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: hidden;
+            background: #fff
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            height: calc(116vh - 120px)
+        }
+
+        .swiper-slide {
+            height: auto;
+            background: #fff;
+            /* margin-bottom: 10rem; */
+            padding-bottom: 3rem;
+        }
+
+        .text-center {
+            text-align: center;
+            
+        }
+
+        .list-group {
+            padding-left: 0;
+            /* margin-bottom: 13rem; */
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+
+        /* 下拉刷新结束 */
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="tab">
+            <a class="active" href="javascript:;" data-id="1" data-type="all">全部</a>
+            <a href="javascript:;" data-id="2" data-type="buhuo">需补货</a>
+            <a href="javascript:;" data-id="3" data-type="pandian">急需盘点</a>
+            <a href="javascript:;" data-id="4" data-type="delete">已删除</a>
+        </div>
+
+        <!-- 搜索框 -->
+        <div class="deliver_search">
+            <div class="deliver_search_con">
+                <input type="text" class="search_deliver" placeholder="输入搜索名称" />
+                <a href="javascript:" class="date" style="visibility:hidden">日期</a>
+                <button class="search_btn">搜索</button>
+            </div>
+        </div>
+        <!-- 搜索框结束 -->
+
+        <!-- 选择日期 -->
+        <div class="choice_date" style="display: none">
+            <div class="choice_date_con">
+                <span>选择日期</span>
+                <input class="conlipt ptime" type="date" data-servertime="servertime" placeholder="请选择服务时间">
+            </div>
+        </div>
+        <!-- 选择日期结束 -->
+
+        <!-- 排序 -->
+        <div class="sort">
+            <div class="sort_con">
+                <a href="javascript:" class="zx" data-attrs="zxsort"> <i class="iconfont iconzx"></i> <span class="sort_txt">正序</span></a>
+                <a href="javascript:" class="qt" data-attrs="qtsort" style="text-align: right"><span>其他排序方式</span></a>
+                <!-- 排序方式 -->
+                <ul class="qtul">
+                    <li class="sort_li" data-attrs="name_sort"><a href="javascript:">名称排序</a></li>
+                    <li class="sort_li" data-attrs="times_sort"><a href="javascript:">时间排序</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 排序结束 -->
+
+        <!-- 已经补货列表 -->
+        <div class="buhuo_list">
+            <div class="buhuo_list_con">
+                <span style="margin-right: 40%;">已经补货列表, 50条</span>
+                <a href="javascript:" class="batchOperation">批量操作</a>
+            </div>
+        </div>
+        <!-- 已经补货列表结束 -->
+
+        <!-- 备货,修改,删除,二维码 -->
+        <div class="bh_xg">
+            <div class="bh_xg_con">
+                <span class="bh">备货</span>
+                <!-- <span class="xg">修改</span>
+                <span class="sc">删除</span> -->
+                <span class="emw">二维码</span>
+                <span class="qx" data-allelection='false'>全选</span>
+                <div style="display: block;clear: both;"></div>
+            </div>
+        </div>
+
+        <!-- 备货,修改,删除,二维码结束 -->
+
+
+
+        <!-- 批量下载二维码,零食盒子设置,批量添加零食盒子,添加零食盒子 -->
+        <div class="pl">
+            <a href="javascript:" class="d_ewm">批量下载二维码</a>
+            <a href="javascript:" class="sz">零食盒子设置</a>
+        </div>
+        <div class="pl">
+            <a href="batch_add_lshz.html" class="pl_lshz">批量添加零食盒子</a>
+            <a href="add_hz.html" class="tj_lshz">添加零食盒子</a>
+        </div>
+        <!-- 批量下载二维码,零食盒子设置,批量添加零食盒子,添加零食盒子结束 -->
+
+
+        <!-- swiper2 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper w">
+                <div class="swiper-slide d" style="margin-top:0">
+                    <div class="swiper-container2" style="overflow: hidden">
+                        <div class="swiper-wrapper" id="swiper_data">
+                            <div class="swiper-slide list-group" data-attrs="group_a">
+
+                                <!-- <div class="con"></div> -->
+                                
+                            <!--  <div class="con">
+                                   <a href="javascript:" class="commodity_a" data-commodId="1">
+                                       <div class="cell">
+                                           <div class="cell_a">
+                                               <span class="delivery_title">新21号406:  余16元商品</span> 
+                                               <span class="create_time">最近盘点:3月13日 补货时间4月25日,之后销售28元</span>
+                                           </div>
+                                           <div class="cell_b" data-iconFlag='no'>
+                                               <i class="iconfont iconwxuanz"></i>
+                                           </div>
+                                       </div>
+                                   </a>
+
+                                   <a href="javascript:" class="commodity_a" data-commodId="2">
+                                       <div class="cell">
+                                           <div class="cell_a">
+                                               <span class="delivery_title">配送完毕：新21号406</span>
+                                               <span class="create_time">补货时间4月29日,之后销售38元</span>
+                                           </div>
+                                           <div class="cell_b" data-iconFlag='no'>
+                                               <i class="iconfont iconwxuanz"></i>
+                                           </div>
+                                       </div>
+                                   </a>  
+                               </div> -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+        <!-- 遮盖层 -->
+        <div class="cover"></div>
+        <!-- 遮盖层结束 -->
+
+        <!-- 弹框_功能 全部 -->
+        <div class="card card_all">
+            <div class="card_tit card_all_title">新21号403</div>
+            <div class="card_table_wrap">
+                <ul class="card_ul">
+                    <li class="card_li"><a href="beihuo.html">备货</a></li>
+                    <li class="card_li"><a href="pdian.html">盘点</a></li>
+                    <li class="card_li"><a href="javascript:">暂无配送单</a></li>
+                    <li class="card_li"><a href="newapply.html">二维码</a></li>
+                    <li class="card_li"><a href="jyRecord.html">交易记录</a></li> 
+                    <li class="card_li"><a href="settinga.html">设置</a></li>
+                    <li class="card_li card_delete"><a href="javascript:">删除</a></li>
+                    <li class="card_li cancel"><a href="javascript:">取消</a></li>
+                    <div style="clear: both"></div>
+                </ul>
+            </div>
+        </div>
+        <!-- 弹框_功能结束 -->
+
+        <!-- 弹框_功能 需补货 -->
+        <div class="card card_xbh" style="display: none">
+            <div class="card_tit card_xbh_title">新21号403</div>
+            <div class="card_table_wrap">
+                <ul class="card_ul">
+                    <li class="card_li"><a href="javascript:">备货</a></li>
+                    <li class="card_li"><a href="javascript:">盘点</a></li>
+                    <li class="card_li"><a href="javascript:">暂无配送单</a></li>
+                    <li class="card_li"><a href="javascript:">交易记录</a></li> 
+                    <li class="card_li"><a href="javascript:">设置</a></li>
+                    <li class="card_li card_delete"><a href="javascript:">删除</a></li>
+                    <li class="card_li cancel"><a href="javascript:">取消</a></li>
+                    <div style="clear: both"></div>
+                </ul>
+            </div>
+        </div>
+        <!-- 弹框_功能结束 -->
+
+        <!-- 弹框_功能 急需盘点 -->
+        <div class="card card_jxpd" style="display: none">
+            <div class="card_tit card_jxpd_title">新21号403</div>
+            <div class="card_table_wrap">
+                <ul class="card_ul">
+                    <li class="card_li"><a href="javascript:">备货</a></li>
+                    <li class="card_li"><a href="javascript:">盘点</a></li>
+                    <li class="card_li"><a href="javascript:">暂无配送单</a></li>
+                    <li class="card_li"><a href="javascript:">二维码</a></li>
+                    <li class="card_li"><a href="javascript:">交易记录</a></li> 
+                    <li class="card_li"><a href="javascript:">设置</a></li>
+                    <li class="card_li card_delete"><a href="javascript:">删除</a></li>
+                    <li class="card_li cancel"><a href="javascript:">取消</a></li>
+                    <div style="clear: both"></div>
+                </ul>
+            </div>
+        </div>
+        <!-- 弹框_功能结束 -->
+
+        <!-- 弹框_功能 已删除 -->
+        <div class="card card_sc" style="display: none">
+            <div class="card_tit card_sc_title">新21号403</div>
+            <div class="card_table_wrap">
+                <ul class="card_ul">
+                    <li class="card_li"><a href="javascript:">备货</a></li>
+                    <li class="card_li"><a href="javascript:">盘点</a></li>
+                    <li class="card_li"><a href="javascript:">暂无配送单</a></li>
+                    <li class="card_li"><a href="javascript:">二维码</a></li>
+                    <li class="card_li"><a href="javascript:">交易记录</a></li> 
+                    <li class="card_li"><a href="javascript:">设置</a></li>
+                    <li class="card_li card_delete"><a href="javascript:">删除恢复</a></li>
+                    <li class="card_li cancel"><a href="javascript:">取消</a></li>
+                    <div style="clear: both"></div>
+                </ul>
+            </div>
+        </div>
+        <!-- 弹框_功能结束 -->
+
+        <!-- 底部footer -->
+        <div class="footer">
+            <ul>
+                <li>
+                    <a href="index.html">首页</a>
+                </li>
+                <li>
+                    <a href="retail_admin.html">盒子</a>
+                </li>
+                <li>
+                    <a href="deliveryCore.html">配送</a>
+                </li>
+                <li>
+                    <a href="javascript:">我的</a>
+                </li>
+            </ul>
+            
+        </div>
+        <!-- 底部footer结束 -->
+
+
+    </div>
+
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/retail_admin.js"></script>
+    <script type="text/javascript" src="./js/swiper-3.4.0.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+     $('.bh').bind('click',function() {
+         let commodIdArr = [];
+        // window.location.href = 'qx_beihuo.html';
+
+        //获取哪些是选中的 , 将选中的商品ID 保存在数组中, 用于传值
+        for (let i = 0 ; i < $('.iconxuanz').length ; i++){
+            let commodId =  $('.iconxuanz').parent().parent().parent().attr('data-commodid');
+            commodIdArr.push(commodId)
+        }
+        console.log(commodIdArr)
+        
+     })
+    </script>
+    <script>
+        var loadFlag = true;
+        var onloadnum = 5; //页面加载时获取的个数
+        var swiper_a_num = 0; //上拉或下拉加载时递增的数
+        var swipersize = 5; //上拉或下拉时每次加载的个数
+
+        // 页面加载
+        document.onreadystatechange = function () {
+        if (document.readyState == 'complete') {
+            let batchArr = [1,3,4];
+            batchArr.forEach(function(item) {
+                $(".swiper-slide-active").eq(1).append(`<a href="javascript:" class="commodity_a" data-commodId="${item}">
+                    <div class="cell">
+                        <div class="cell_a">
+                            <span class="delivery_title">配送完毕：新${item}号406</span>
+                            <span class="create_time">补货时间4月29日,之后销售38元</span>
+                        </div>
+                        <div class="cell_b" data-iconFlag='no'>
+                            <i class="iconfont iconwxuanz"></i>
+                        </div>
+                    </div>
+                </a>`);
+            });
+                
+            }
+        }
+
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            scrollbar: '.swiper-scrollbar',
+            slidesPerView: 'auto',
+            mousewheelControl: true,
+            freeMode: true,
+            onTouchMove: function (swiper) { //手动滑动中触发
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+            },
+            onTouchEnd: function (swiper) {
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+                var identName = document.getElementsByClassName('swiper-slide-active')[0];
+
+                var tabId = $(this).attr('data-id'); //tab的id
+                var tabIndex = $('.tab a.active').index(); //tab选中的索引
+
+
+
+                // 上拉加载
+                if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                    
+                    // ajax_common(tabId, onloadnum, swipersize);
+                    ajax_common(tabId,tabIndex,onloadnum,swipersize,swiper_a_num);
+
+                }
+                return false;
+            }
+        });
+
+        // mySwiper2滑动不用了但不能注释
+        var mySwiper2 = new Swiper('.swiper-container2', {
+            onTransitionEnd: function (swiper) {
+                mySwiper.update();
+            }
+        });
+
+        // 排序方式-正序
+        $('.zx').bind('click',function() {
+            var swiper_a_num = 0;
+            mySwiper.update(); // 重新计算高度;
+            $('.swiper-slide-active').eq(0).html(''); //清空
+            var dataAttrs = $(this).attr('data-attrs');//排序的方式
+            var tabIndex = $('.tab a.active').index(); //tab选中的索引
+            var tabId = $('.tab a.active').attr('data-id')// tab选中的ID
+            console.log(dataAttrs+'排序方式');
+            console.log(tabIndex);
+            ajax_common(dataAttrs,tabIndex,tabId,onloadnum,swipersize,swiper_a_num);
+        });
+
+        // 名称-时间排序
+        $('.sort_li').bind('click',function() {
+            $('.qtul').eq(0).attr('style','display:none');
+            $('.cover').eq(0).attr('style','display:none');
+            $('body').attr('style','overflow:auto');
+            var swiper_a_num = 0;
+            mySwiper.update(); // 重新计算高度;
+            $('.swiper-slide-active').eq(0).html(''); //清空
+            var dataAttrs = $(this).attr('data-attrs');//排序的方式
+            var tabIndex = $('.tab a.active').index(); //tab选中的索引
+            var tabId = $('.tab a.active').attr('data-id')// tab选中的ID
+            console.log(dataAttrs+'排序方式');
+            console.log(tabIndex);
+            ajax_common(dataAttrs,tabIndex,tabId,onloadnum,swipersize,swiper_a_num);
+        });
+
+        // 切换页面
+        $('.tab').on('click', 'a', function () {
+            var swiper_a_num = 0;
+
+            $('.swiper-slide-active').eq(0).html(''); //清空
+            $(this).addClass('active').siblings('a').removeClass('active');
+            mySwiper2.slideTo($(this).index(), 500, false);
+
+            var tabId = $(this).attr('data-id'); //tab切换时的id
+            ajax_common(tabId,onloadnum,swipersize,swiper_a_num);
+
+            // ajax_common(tabId, onloadnum, swipersize);
+            mySwiper.update(); // 重新计算高度;
+        });
+
+        //上拉,切换页面时用于获取数据
+        function ajax_common(tabId,tabIndex,onloadnum,swipersize,swiper_a_num) {
+
+            setTimeout(function() {
+
+                for (let i = 0 ; i < swipersize ; i++) {
+                    swiper_a_num += 1;
+                    console.log(swiper_a_num);
+                    
+                    // $(".list-group").eq(mySwiper2.activeIndex).find('.con').eq(0).append(`<a href="javascript:" class="commodity_a" data-commodId="${swiper_a_num}">
+                    //                     <div class="cell">
+                    //                         <div class="cell_a">
+                    //                             <span class="delivery_title">配送完毕：新${swiper_a_num}号406</span>
+                    //                             <span class="create_time">补货时间4月29日,之后销售38元</span>
+                    //                         </div>
+                    //                         <div class="cell_b" data-iconFlag='no'>
+                    //                             <i class="iconfont iconwxuanz"></i>
+                    //                         </div>
+                    //                     </div>
+                    //                 </a>`);
+
+                    $(".swiper-slide-active").eq(1).append(`<a href="javascript:" class="commodity_a" data-commodId="${swiper_a_num}">
+                                        <div class="cell">
+                                            <div class="cell_a">
+                                                <span class="delivery_title">配送完毕：新${swiper_a_num}号406</span>
+                                                <span class="create_time">补货时间4月29日,之后销售38元</span>
+                                            </div>
+                                            <div class="cell_b" data-iconFlag='no'>
+                                                <i class="iconfont iconwxuanz"></i>
+                                            </div>
+                                        </div>
+                                    </a>`);
+
+                }
+
+            },800);
+
+            // $.ajax({
+            //     url : '',
+            //     type : 'POST',
+            //     data : {
+            //         'tabId' : tabId,
+            //         'onloadnum' : onloadnum,
+            //         'swipersize' : swipersize
+            //     },
+            //      success : function() {},
+            //      error : function() {}
+            // });
+
+
+        }
+    </script>
+
+</body>
+
+</html>

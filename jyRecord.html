@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>校园零食</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/jyRecord.css">
+    <link rel="stylesheet" href="./css/iconfont_peis.css">
+    <link rel="stylesheet" type="text/css" href="./css/swiper-3.3.1.min.css" />
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: hidden;
+            background: #fff
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            height: calc(100vh - 120px)
+        }
+
+        .swiper-slide {
+            height: auto;
+            background: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .list-group {
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+
+        /* 下拉刷新结束 */
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <!-- 搜索框 -->
+        <div class="deliver_search">
+            <div class="deliver_search_con">
+                <input type="text" class="search_deliver" placeholder="输入搜索名称" />
+                <a href="javascript:" class="date">搜商品</a>
+                <button class="search_btn">搜索</button>
+            </div>
+        </div>
+        <!-- 搜索框结束 -->
+
+        <!-- 选择日期 -->
+        <div class="choice_date">
+            <div class="choice_date_con">
+                <span>选择日期</span>
+                <input class="conlipt ptime" type="date" data-servertime="servertime" placeholder="请选择服务时间">
+            </div>
+        </div>
+        <!-- 选择日期结束 -->
+
+        <!-- 已经补货列表 -->
+        <!-- <div class="buhuo_list">
+            <div class="buhuo_list_con">
+                <span>已经补货列表, 50条</span>
+                <a href="javascript:" class="batchOperation">批量操作</a>
+            </div>
+        </div> -->
+        <!-- 已经补货列表结束 -->
+
+        <!-- 增加库存 -->
+        <div class="cover"></div>
+        <!-- 增加库存结束 -->
+
+        <!-- swiper2 -->
+        <div class="swiper-container" style="margin-top: 12px;">
+            <div class="swiper-wrapper w">
+                <div class="swiper-slide d" style="margin-top:0">
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper" id="swiper_data">
+                            <div class="swiper-slide list-group" data-attrs="group_a">
+                                <div class="con">
+
+                                    <a href="javascript:">
+                                        <div class="cell">
+                                            <div class="cell_a">
+                                                <span class="delivery_title">新21号406</span>
+                                                <span class="delivery_name">零食盒子</span>
+                                                <div style="clear: both"></div>
+                                            </div>
+                                            <div class="cell_b">
+                                                <img src="" alt="" style="width: 35px;height:35px;background:#eee">
+                                                <div class="cell_b_line">
+                                                    <span class="cell_b_line_size">南京板鸭,1件</span>
+                                                    <span class="cell_b_line_money">2.5元</span>
+                                                    <span class="cell_b_line_descript">支付前剩余2件,支付后剩余1件</span>
+                                                    <div style="clear: both"></div>
+                                                </div>
+                                                <div style="clear: both"></div>
+                                            </div>
+                                            <div class="cell_c">
+                                                <div class="cell_c_nc">
+                                                    <div class="c_nc_line">
+                                                        <span class="nv_line_name">我是昵称</span>
+                                                        <span class="nv_line_id">123456</span>
+                                                        <span style="clear: both"></span>
+                                                    </div>
+                                                    <div class="c_nc_line">
+                                                        <span class="nc_line_contacts">联系人</span>
+                                                    </div>
+                                                    <div class="c_nc_line">
+                                                        <span class="nc_line_contacts_phone">联系电话</span>
+                                                    </div>
+                                                    <div class="c_nc_line">
+                                                        <span class="nc_line_remarks">添加备注</span>
+                                                        <button class="nc_line_remarks_btn">保存</button>
+                                                        <input type="text" name="nc_line_remarks" class="nc_line_remarks_ipt" />
+                                                    </div>
+                                                    <div class="c_nc_line">
+                                                        <span class="payment_time_zf">支付</span>
+                                                        <span class="payment_time_date">2019-05-16 13:38:28</span>
+                                                        <span class="payment_time_ls">7373435</span>
+                                                        <span class="payment_settlement">已结算</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+        <!-- 遮盖层 -->
+        <div class="cover"></div>
+        <!-- 遮盖层结束 -->
+
+        <!-- 增加库存和减少库存 -->
+        <div class="stock">
+            <span class="stock_order"></span>
+            <div class="stock_num" style="background: #fff">
+                <span class="sign">标记为已配送</span>
+            </div>
+            <div class="stock_num commodity_tk" data-types="0" style="background: #fff;color: red;">
+                <span class="commodity_refund">雪碧500ml瓶装 退款</span>
+            </div>
+            <div class="stock_num allcommodity_tk" data-types="1" style="background: #fff;color: red;">
+                <span class="commodity_refund_all">此订单全退款</span>
+            </div>
+            <div class="stock_num" style="margin-top: 15px;">
+                <button class="stock_cancel">取消</button>
+                <button class="stock_success">完成</button>
+            </div>
+        </div>
+        <!-- 增加库存和减少库存结束 -->
+
+        <!-- 扣除钱数弹框 -->
+        <div class="cover_m"></div>
+        <div class="money_card">
+            <div class="stock_num">
+                将从您账户余额中扣除<span>2.5</span>元,确认退款吗
+            </div>
+            <div class="stock_num">
+                <button class="money_cancel">取消</button>
+                <button class="money_success">确认</button>
+            </div>
+        </div>
+        <!-- 扣除钱数弹框结束 -->
+
+
+    </div>
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/jyRecord.js"></script>
+    <script type="text/javascript" src="./js/swiper-3.4.0.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var loadFlag = true;
+        var onloadnum = 5; //页面加载时获取的个数
+        var swiper_a_num = 0; //上拉或下拉加载时递增的数
+        var swipersize = 5; //上拉或下拉时每次加载的个数
+
+        // 页面加载
+        document.onreadystatechange = function () {
+            if (document.readyState == 'complete') {
+
+            }
+        }
+
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            scrollbar: '.swiper-scrollbar',
+            slidesPerView: 'auto',
+            mousewheelControl: true,
+            freeMode: true,
+            onTouchMove: function (swiper) { //手动滑动中触发
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+            },
+            onTouchEnd: function (swiper) {
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+
+                var identName = document.getElementsByClassName('swiper-slide-active')[0];
+                var tabId = $('.tab a.active').attr('data-id'); //tab选中的索引
+
+
+                // 上拉加载
+                if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                    // console.log("已经到达底部！");
+                    if (loadFlag) {
+                        $(".loadtip").html('正在加载...');
+                    } else {
+                        $(".loadtip").html('没有更多啦！');
+                    }
+                    // ajax_common(tabId, onloadnum, swipersize);
+                }
+                return false;
+            }
+        });
+
+        // mySwiper2滑动不用了但不能注释
+        var mySwiper2 = new Swiper('.swiper-container2', {
+            onTransitionEnd: function (swiper) {
+                mySwiper.update();
+            }
+        });
+
+        // 切换页面
+        $('.tab').on('click', 'a', function () {
+            var swiper_a_num = 0;
+            var tabId = $(this).attr('data-id'); //当前tabs的索引
+            console.log(tabId)
+            var tabtxt = $(this).text();
+            $('.swiper-slide-active').eq(0).html(''); //清空
+            $(this).addClass('active').siblings('a').removeClass('active');
+            mySwiper2.slideTo($(this).index(), 500, false);
+
+            // ajax_common(tabId, onloadnum, swipersize);
+            mySwiper.update(); // 重新计算高度;
+        });
+
+        //上拉,切换页面时用于获取数据
+        function ajax_common() {
+
+            // $.ajax({
+            //     url : '',
+            //     type : 'POST',
+            //     data : {
+            //         'tabId' : tabId,
+            //         'onloadnum' : onloadnum,
+            //         'swipersize' : swipersize
+            //     },
+            //      success : function() {},
+            //      error : function() {}
+            // });
+
+
+        }
+    </script>
+
+</body>
+
+</html>

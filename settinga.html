@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>校园零食</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/settinga.css">
+    <link rel="stylesheet" href="./css/iconfont_ckgl.css">
+</head>
+<body>
+
+    <!-- 申请补货设置 -->
+    <!-- 1 -->
+    <p class="ptitle">零售盒子名</p>
+    <div class="bhline">
+        <span>零售盒子名</span>
+        <input type="text" name="hz_name" id="hz_name" value="零售盒子名" />
+    </div>
+    <div class="bhline">
+        <!-- <span>盒子描述</span> -->
+        <input type="text" style='width:100%;height:75px;display:block' name="hz_Explain" id="hz_Explain" value="" placeholder="零食盒子说明,补货商品偏好等相关说明(选填)" />
+    </div>
+
+    <!-- 2 -->
+    <p class="ptitle">折扣</p>
+    <div class="bhline">
+        <span>折扣</span>
+        <input type="text" name="zk" id="zk" value="10" />
+    </div>
+
+    <!-- 是否开启 -->
+    <p class="ptitle"> 一次性购买零食盒子中全部商品享受的折扣，方便经营者学期末清货使用</p>
+    <div class="bhline">
+        <span>是否开启</span>
+        <span style="margin-left: 16%;" class="lsjg" data-lsFlag='false'>开启 <i class="iconfont iconwxz"></i></span>
+    </div>
+
+    <!-- 是否允许主动补货 -->
+    <p class="ptitle"> 有的零食盒子不希望主动是否允许主动补货，如果关闭此选项，零食盒子就不会出现在「需补货」栏目中了 </p>
+    <div class="bhline">
+        <span>是否允许主动补货</span>
+        <span style="margin-left: 16%;" class="zdbh" data-lsFlag='false'>开启 <i class="iconfont iconwxz"></i></span>
+    </div>
+
+    <!-- 是否营业 -->
+    <p class="ptitle"> 一次性购买零食盒子中全部商品享受的折扣，方便经营者学期末清货使用</p>
+    <div class="bhline">
+        <span>是否营业</span>
+        <span style="margin-left: 16%;" class="yy" data-lsFlag='false'>开启 <i class="iconfont iconwxz"></i></span>
+    </div>
+
+
+    <!-- 3 -->
+    <!-- <p class="ptitle"> 一次性购买零食盒子中全部商品享受的折扣，方便经营者学期末清货使用0</p>
+    <div class="bhline">
+        <span>申请补货低于多少金额</span>
+        <input type="text" name="applymoney" id="applymoneys" value="1528" />
+    </div> -->
+
+    <!--  填写申请人信息 -->
+    <div class="bhline">
+        <span>申请人姓名</span>
+        <input type="text" name="sq_name" id="sq_name" placeholder="(选填)"/>
+    </div>
+    <div class="bhline">
+        <span>申请人电话</span>
+        <input type="text" name="sq_phone" id="sq_phone" placeholder="(选填)"/>
+    </div>
+    <div class="bhline">
+        <span>地址</span>
+        <input type="text" name="sq_adress" id="sq_adress" placeholder="(选填)"/>
+    </div>
+    <div class="bhline">
+        <span>申请人id</span>
+        <input type="text" name="sq_peopleid" id="sq_peopleid" placeholder="(选填)"/>
+    </div>
+    <div class="bhline">
+        <span>学号</span>
+        <input type="text" name="sq_xuehao" id="sq_xuehao" placeholder="(选填)"/>
+    </div>
+    <div class="bhline">
+        <span>学校</span>
+        <input type="text" name="sq_school" id="sq_school" placeholder="(选填)"/>
+    </div>
+    <div class="bhline">
+        <span>推荐人</span>
+        <input type="text" name="sq_tjren" id="sq_tjren" placeholder="(选填)"/>
+    </div>
+    <div class="bhline">
+        <span>手机号</span>
+        <input type="text" name="sq_phone" id="sq_school" placeholder="(选填)"/>
+    </div>
+    <div class="bhline">
+        <span>微信号</span>
+        <input type="text" name="sq_wechat" id="sq_school" placeholder="(选填)"/>
+    </div>
+
+
+    <!--  填写申请人信息结束 -->
+
+
+
+    <!-- 提交按钮 -->
+    <button class="save_mess">保存</button>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/settinga.js"></script>
+</body>
+</html>

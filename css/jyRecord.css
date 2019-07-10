@@ -1,0 +1,302 @@
+.deliver_search{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #fff;
+}
+.deliver_search .deliver_search_con{
+    width: 92%;
+    height: auto;
+    margin: 0 auto;
+}
+.deliver_search .deliver_search_con input{
+    width: 170px;
+    height: 34px;
+    display: inline-block;
+    padding: 0 15px;
+}
+.deliver_search .deliver_search_con a{
+    width: 41px;
+    height: 100%;
+    display: inline-block;
+    
+}
+.deliver_search .deliver_search_con button{
+    width: 70px;
+    height: 28px;
+    display: inline-block;
+
+}
+
+/* 选择日期 */
+.choice_date{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #fff;
+}
+.choice_date .choice_date_con{
+    width: 92%;
+    height: auto;
+    margin: 0px auto 0 auto;
+    border-top: 1px solid #dddbdb;
+
+}
+.choice_date .choice_date_con span{
+    width: auto;
+    height: 100%;
+    display: inline-block;
+
+}
+.choice_date .choice_date_con input{
+    width: 75%;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: right;
+    background: #fff
+}
+
+/* 选择日期结束 */
+
+/* 已经补货列表 */
+.buhuo_list{
+    width: 100%;
+    height: auto;
+    line-height: 40px;
+    background: #fff;
+}
+.buhuo_list .buhuo_list_con{
+    width: 92%;
+    height: auto;
+    margin: 0px auto 0 auto;
+    border-top: 1px solid #dddbdb;
+    border-bottom: 1px solid #dddbdb;
+
+}
+.buhuo_list .buhuo_list_con span{
+    width: auto;
+    height: 100%;
+    display: inline-block;
+
+}
+.buhuo_list .buhuo_list_con a{
+    width: 56%;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: right;
+    color: #3498DB;
+}
+/* 已经补货列表结束 */
+
+.con{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+.con a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.cell{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+
+
+}
+.cell .cell_a{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #d9d9d9;
+}
+.cell .cell_a span{
+    display: inline-block;
+    text-align: left;
+    margin: 5px 0;
+}
+.cell .cell_a .delivery_title{
+    font-size: 14px;
+    color: #000;
+    float: left;
+}
+.cell .cell_a .delivery_name{
+    float: right;
+} 
+.cell .cell_b{
+    width: 100%;
+    height: auto;
+    display: block; 
+    margin: 5px auto 0 auto; 
+    border-bottom: 1px solid #d9d9d9; 
+}
+.cell .cell_b img{
+    float: left;
+}
+.cell .cell_b .cell_b_line{
+    width: 85%;
+    float: left;
+    text-align: left;
+    color: #000;
+}
+.cell .cell_b .cell_b_line .cell_b_line_size{
+    margin-left: 12px;
+}
+.cell .cell_b .cell_b_line .cell_b_line_money{
+    float: right;
+}
+.cell .cell_b .cell_b_line .cell_b_line_descript{
+    display: block;
+    line-height: 23px;
+    margin-left: 12px;
+    color: palevioletred;
+}
+
+/* cell_c */
+.cell .cell_c{
+    height: auto;
+    display: block; 
+    margin: 5px auto 0 auto; 
+    border-bottom: 1px solid #d9d9d9; 
+}
+.cell .cell_c .cell_c_nc{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.cell .cell_c .cell_c_nc .c_nc_line{
+    width: 100%;
+    height: auto;
+    line-height: 26px;
+    text-align: left;
+}
+.cell .cell_c .cell_c_nc .c_nc_line span{
+    font-size: 15px;
+}
+.cell .cell_c .cell_c_nc .c_nc_line .nv_line_name{}
+.cell .cell_c .cell_c_nc .c_nc_line .nv_line_name::before{
+    content: '昵称:';
+    margin-right: 5px;
+    color: black;
+}
+.cell .cell_c .cell_c_nc .c_nc_line .nv_line_id{
+    float: right;
+}
+.cell .cell_c .cell_c_nc .c_nc_line .nv_line_id::before{
+    content: 'id: ';
+    margin-right: 5px;
+    color: black;
+}
+
+.cell .cell_c .cell_c_nc .c_nc_line .nc_line_contacts{
+
+}
+.cell .cell_c .cell_c_nc .c_nc_line .nc_line_contacts::before{
+    content: '联系人:';
+    margin-right: 5px;
+    color: black;
+}
+.cell .cell_c .cell_c_nc .c_nc_line .nc_line_contacts_phone{
+    
+}
+.cell .cell_c .cell_c_nc .c_nc_line .nc_line_contacts_phone::before{
+    content: '联系电话:';
+    margin-right: 5px;
+    color: black;
+}
+.cell .cell_c .cell_c_nc .c_nc_line .nc_line_remarks{
+    display: inline-block;
+    width: 80px;
+    line-height: 40px;
+    color: #000;
+}
+.cell .cell_c .cell_c_nc .c_nc_line .nc_line_remarks_btn{
+    display: none;
+    width: 73px;
+    line-height: 25px;
+    border: none;
+    border-radius: 5px;
+    background: #2ECC71;
+    color:#fff;
+    float: right;
+}
+.cell .cell_c .cell_c_nc .c_nc_line .nc_line_remarks_ipt{
+    border: 1px solid #dddbdd;
+    display: none;
+    width: 98%;
+    height: 65px;
+}
+.cell .cell_c .cell_c_nc .c_nc_line .payment_time_ls::before{
+    content: '流水号:';
+}
+
+/* cover */
+.cover{position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,0.43);top:0;z-index: 999;display: none; }
+.cover_m{position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,0.57);top:0;z-index: 9999;display: none; }
+/* cover结束 */
+
+/* 增加库存和减少库存 */
+.stock,.money_card{
+    width: 80%;
+    height: auto;
+    background:#fafafc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 23px 1px;
+    display: none;
+    z-index: 9999;
+}
+.stock .stock_order{
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+}
+.stock .stock_order::before{
+    content: '订单号:';
+    margin-right: 5px;
+}
+.stock .stock_num,.money_card .stock_num{
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    border-bottom: 1px solid #f0e9e9;
+
+}
+.stock .stock_num .stock_num_ipt{
+    width: auto;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 5px;
+
+}
+.stock .stock_num button,.money_card .stock_num button{
+    width: 85px;
+    height: 27px;
+    border: none;
+    border-radius: 4px;
+}
+
+.stock .stock_num .stock_cancel,.money_card .stock_num .money_cancel{
+    margin-right: 20px;
+    color: #000;
+}
+.stock .stock_num .stock_success,.money_card .stock_num .money_success{
+    margin-left: 20px;
+    background: #0bb20c;
+    color: #fff;
+}
+
+/* 增加库存和减少库存结束 */
+
+
+
+

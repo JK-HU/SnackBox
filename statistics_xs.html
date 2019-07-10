@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>校园零食</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/statistics_xs.css">
+    <link rel="stylesheet" href="./css/iconfont_peis.css">
+    <link rel="stylesheet" type="text/css" href="./css/swiper-3.3.1.min.css" />
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .tab {
+            display: flex;
+            line-height: 51px;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            z-index: 99;
+            border-bottom: 1px #ccc solid;
+            background: #fff;
+        }
+
+        .tab a {
+            width: 50%;
+            background: #fff;
+            text-align: center;
+            color: #000;
+        }
+
+        .tab .active {
+            border-bottom: 1px #f50 solid;
+            color: #f50;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: hidden;
+            background: #fff
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            height: calc(100vh - 120px)
+        }
+
+        .swiper-slide {
+            height: auto;
+            background: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .list-group {
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+
+        /* 下拉刷新结束 */
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="tab">
+            <a class="active" data-type="lshz" href="javascript:;">零售盒子</a>
+            <a href="javascript:;" data-type="syfw">校园服务</a>
+        </div>
+
+        <!-- 本日销售-昨日销售 -->
+
+        <a href="javascript:" class="detailsLista">
+            <div class="xs_cell" style="margin-top: 75px">
+                <div class="xs_cell_a">
+                    <span>本日销售</span>
+                </div>
+                <div class="xs_cell_b">
+                    <span class="xs_cell_b_prise btxs">19.5</span> 元
+                </div>
+            </div>
+            <div class="xs_cell">
+                <div class="xs_cell_a">
+                    <span>本日利润</span>
+                </div>
+                <div class="xs_cell_b">
+                    <span class="xs_cell_b_prise btlr">19.5</span> 元
+                </div>
+            </div>
+            <div class="xs_cell">
+                <div class="xs_cell_a">
+                    <span>昨日销售</span>
+                </div>
+                <div class="xs_cell_b">
+                    <span class="xs_cell_b_prise ztxs">19.5</span> 元
+                </div>
+            </div>
+            <div class="xs_cell">
+                <div class="xs_cell_a">
+                    <span>昨日利润</span>
+                </div>
+                <div class="xs_cell_b">
+                    <span class="xs_cell_b_prise ztlr">19.5</span> 元
+                </div>
+            </div>
+        </a>
+
+        <!-- 本日销售-昨日销售结束 -->
+
+        <!-- 仓库剩余 -->
+        <a href="javascript:" class="detailsLista">
+            <div class="xs_cell" style="margin-top: 25px">
+                <div class="xs_cell_a">
+                    <span>仓库剩余</span>
+                </div>
+                <div class="xs_cell_b">
+                    <span class="xs_cell_b_prise sksy">19.5</span> 元
+                </div>
+            </div>
+            <div class="xs_cell">
+                <div class="xs_cell_a">
+                    <span>配送单剩余</span>
+                </div>
+                <div class="xs_cell_b">
+                    <span class="xs_cell_b_prise psdsy">19.5</span> 元
+                </div>
+            </div>
+            <div class="xs_cell">
+                <div class="xs_cell_a">
+                    <span>回收单剩余</span>
+                </div>
+                <div class="xs_cell_b">
+                    <span class="xs_cell_b_prise hsdsy">19.5</span> 元
+                </div>
+            </div>
+        </a>
+        <!-- 仓库剩余结束 -->
+
+        <!-- 查询日期 -->
+        <a href="javascript:" class="detailsLista">
+            <div class="xs_cell" style="margin-top: 25px">
+                <div class="xs_cell_a">
+                    <span class="start_date">起始日期</span>
+                </div>
+                <div class="xs_cell_b">
+                    <input type="date" class="start_date_ipt">
+                </div>
+            </div>
+            <div class="xs_cell">
+                <div class="xs_cell_a">
+                    <span class="end_date">结束日期</span>
+                </div>
+                <div class="xs_cell_b">
+                    <input type="date" class="end_date_ipt">
+                </div>
+            </div>
+            <button class="query_date">查询</button>
+        </a>
+        <!-- 查询日期结束 -->
+
+        <!-- 销售统计 -->
+        <a href="javascript:" class="detailsLista" style="margin-top: 25px">
+            <!-- 销售总计 -->
+            <p style="text-align: left;margin-left:20px;padding-top:10px;font-size:15px;color:#777474">销售总计</p>
+            <div class="xs_cell">
+                <div class="xs_cell_a">
+                    <span>销售总额</span>
+                </div>
+                <div class="xs_cell_b">
+                    <span class="xs_cell_b_prise xsze">219.5</span> 元
+                </div>
+            </div>
+            <div class="xs_cell">
+                <div class="xs_cell_a">
+                    <span>利润总额</span>
+                </div>
+                <div class="xs_cell_b">
+                    <span class="xs_cell_b_prise lrze">219.5</span> 元
+                </div>
+            </div>
+        </a>
+        <!-- 销售统计结束 -->
+
+        <!-- 销售商品排行 -->
+        <div class="xs_ranking">
+            <p style="text-align: left;margin-left:20px;padding-top:10px;font-size:15px;color:#777474">销售商品排行</p>
+            <div class="xs_ranking_con">
+                <div class="xs_ranking_head">
+                    <ul>
+                        <li>商品名称</li>
+                        <li>总数量</li>
+                        <li>总成本</li>
+                        <li>总金额</li>
+                        <li>总利润</li>
+                    </ul>
+                </div>
+                <div class="xs_ranking_commodity">
+                    <ul>
+                        <li>统一冰红茶</li>
+                        <li>1</li>
+                        <li>3.2</li>
+                        <li>4</li>
+                        <li>0.8</li>
+                    </ul>
+                    <ul>
+                        <li>统一冰红茶</li>
+                        <li>1</li>
+                        <li>3.2</li>
+                        <li>4</li>
+                        <li>0.8</li>
+                    </ul>
+                </div>
+                <div class="xs_ranking_total">
+                    <ul>
+                        <li>总计</li>
+                        <li>2</li>
+                        <li>4.7</li>
+                        <li>6.5</li>
+                        <li>1.8</li>
+                    </ul>
+                </div>    
+
+            </div>
+        </div>
+        <!-- 销售商品排行结束 -->
+
+
+        <!-- swiper2 -->
+        <div class="swiper-container" style="margin-top: 10px">
+            <div class="swiper-wrapper w">
+                <div class="swiper-slide d" style="margin-top:0">
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper" id="swiper_data">
+                            <div class="swiper-slide list-group" data-attrs="group_a">
+                                <div class="con">
+
+                                    <a href="javascript:" class="detailsList">
+                                        <div class="cell">
+                                            <div class="cell_a">
+                                                <span class="delivery_title">新21号406</span>
+                                                <span class="create_time">截止2019-04-25盒子中剩余<span>4元</span></span>
+                                                <!-- <span class="delivery_description">aaaaaaa</span> -->
+
+                                            </div>
+                                            <div class="cell_b">
+                                                <div class="cell_b_w">
+                                                    <span class="cell_b_num"><span class="cell_b_prise">19.5</span> 元
+                                                </div>
+                                            </div>
+                                            <div class="cell_c" style="display: none">
+                                                <i class="iconfont iconwxuanz"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="javascript:" class="detailsList">
+                                        <div class="cell">
+                                            <div class="cell_a">
+                                                <span class="delivery_title">新21号406</span>
+                                                <span class="create_time">截止2019-04-25盒子中剩余<span>2.5元</span></span>
+                                                <!-- <span class="delivery_description">aaaaaaa</span> -->
+
+                                            </div>
+                                            <div class="cell_b">
+                                                <div class="cell_b_w">
+                                                    <span class="cell_b_num"><span class="cell_b_prise">19.5</span> 元
+                                                </div>
+                                            </div>
+                                            <div class="cell_c" style="display: none">
+                                                <i class="iconfont iconwxuanz"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/statistics_xs.js"></script>
+    <script type="text/javascript" src="./js/swiper-3.4.0.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var loadFlag = true;
+        var onloadnum = 5; //页面加载时获取的个数
+        var swiper_a_num = 0; //上拉或下拉加载时递增的数
+        var swipersize = 5; //上拉或下拉时每次加载的个数
+
+        // 页面加载
+        document.onreadystatechange = function () {
+            if (document.readyState == 'complete') {
+
+            }
+        }
+
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            scrollbar: '.swiper-scrollbar',
+            slidesPerView: 'auto',
+            mousewheelControl: true,
+            freeMode: true,
+            onTouchMove: function (swiper) { //手动滑动中触发
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+            },
+            onTouchEnd: function (swiper) {
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+
+                var identName = document.getElementsByClassName('swiper-slide-active')[0];
+                var tabId = $('.tab a.active').attr('data-id'); //tab选中的索引
+
+
+                // 上拉加载
+                if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                    // console.log("已经到达底部！");
+                    if (loadFlag) {
+                        $(".loadtip").html('正在加载...');
+                    } else {
+                        $(".loadtip").html('没有更多啦！');
+                    }
+                    // ajax_common(tabId, onloadnum, swipersize);
+                }
+                return false;
+            }
+        });
+
+        // mySwiper2滑动不用了但不能注释
+        var mySwiper2 = new Swiper('.swiper-container2', {
+            onTransitionEnd: function (swiper) {
+                mySwiper.update();
+            }
+        });
+
+        // 切换页面
+        $('.tab').on('click', 'a', function () {
+            var swiper_a_num = 0;
+            var tabId = $(this).attr('data-id'); //当前tabs的索引
+            console.log(tabId)
+            var tabtxt = $(this).text();
+            $('.swiper-slide-active').eq(0).html(''); //清空
+            $(this).addClass('active').siblings('a').removeClass('active');
+            mySwiper2.slideTo($(this).index(), 500, false);
+
+            // ajax_common(tabId, onloadnum, swipersize);
+            mySwiper.update(); // 重新计算高度;
+        });
+
+        //上拉,切换页面时用于获取数据
+        function ajax_common() {
+
+            // $.ajax({
+            //     url : '',
+            //     type : 'POST',
+            //     data : {
+            //         'tabId' : tabId,
+            //         'onloadnum' : onloadnum,
+            //         'swipersize' : swipersize
+            //     },
+            //      success : function() {},
+            //      error : function() {}
+            // });
+
+
+        }
+    </script>
+
+</body>
+
+</html>

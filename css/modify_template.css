@@ -1,0 +1,428 @@
+.deliver_search{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #fff;
+}
+.deliver_search .deliver_search_con{
+    width: 92%;
+    height: auto;
+    margin: 0 auto;
+    border-bottom: 1px solid #d0d0d0;
+    
+}
+.deliver_search .deliver_search_con input{
+    width: 170px;
+    height: 34px;
+    display: inline-block;
+    margin-top: 6px;
+    float: left;
+}
+.deliver_search .deliver_search_con a{
+    width: 41px;
+    height: 100%;
+    display: inline-block;
+    
+}
+.deliver_search .deliver_search_con button{
+    width: 70px;
+    height: 28px;
+    display: inline-block;
+    margin-top: 6px;
+    float: right;
+
+}
+
+/* 盒子备注 */
+.choice_beizhu{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin: 1px auto 1px auto;;
+    background: #fff;
+}
+.choice_beizhu .choice_beizhu_con{
+    width: 92%;
+    height: auto;
+    margin: 0 auto;
+    border-bottom: 1px solid #d0d0d0;
+
+}
+.choice_beizhu .choice_beizhu_con span{
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    margin-right: 51%;
+    float: left;
+}
+.choice_beizhu .choice_beizhu_con a{
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    float: right;
+}
+/* 盒子备注结束 */
+
+/* 配送单备注 */
+.psd_bz{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin: 1px auto 1px auto;;
+    background: #fff;
+}
+.psd_bz .psd_bz_con{
+    width: 92%;
+    height: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid #d0d0d0;
+}
+.psd_bz .psd_bz_con input{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+
+/* 配送单备注结束 */
+
+
+/* 内容 */
+.con{
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 4px 4px;
+    background: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 13px;
+
+}
+.con > a{
+    width: auto;
+    height: 100%;
+    display: block;
+    padding: 10px 8px;
+    border-bottom: 1px solid #eee;
+}
+.con > a .product{
+    display: flex;
+    flex-direction: column;
+}
+.con > a .product .product_top{
+    flex: 1;
+}
+.con > a .product .product_top img{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    float: left;
+}
+.con > a .product .product_top .product_t_deail{
+    width: 85%;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    float: left;
+    text-align: left;
+    overflow: hidden;
+}
+
+.con > a .product .product_bot{
+    flex: 1;
+    margin-top: 15px;
+}
+
+.con > a .product .product_bot span{
+    display: inline-block;
+    width: 66px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+}   
+
+.con > a .product .product_bot .add_product_name{
+    float: left;
+    margin-left: 15px;
+    color: #000;
+    font-size: 16px;
+}
+.con > a .product .product_bot .product_moneys{
+    width: 72px;
+    height: 22px;
+    text-align: right;
+    color: #ff6600;
+    font-size: 16px;
+    margin-left: 40px;
+}
+.con > a .product .product_bot .product_moneys::before{
+    content: '￥';
+    display: inline-block;
+    color: #ff6600;
+    margin-right: 1px;
+    font-size: 16px;
+}
+
+.con > a .product .product_bot .reduce_i{
+    float: right;
+    background: #2ECC71;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    display: none;
+}
+.con > a .product .product_bot .reduce_i i{
+    font-size: 18px;
+}
+.con > a .product .product_bot .add_product_text{
+    float: right;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 21px;
+    color: #454444;
+    text-align: center;
+    margin: 0 20px;
+    font-size: 19px;
+    display: none;
+    
+}
+.con > a .product .product_bot .add_i{
+    float: right;
+    background: #2ECC71;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+.con > a .product .product_bot .add_i i{
+    font-size: 18px;
+}
+
+
+/* cover */
+.cover{position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,0.6);top:0;z-index: 999;display: none; }
+/* cover结束 */
+
+/* 增加库存和减少库存 */
+.stock{
+    width: 80%;
+    height: 20%;
+    background:#fafafc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+}
+.stock > span{
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.stock .stock_num{
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+
+}
+.stock .stock_num .stock_num_ipt{
+    width: auto;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 5px;
+
+}
+.stock .stock_num button{
+    width: 85px;
+    height: 27px;
+    border: none;
+    border-radius: 4px;
+}
+
+.stock .stock_num .stock_cancel{
+    margin-right: 20px;
+    color: #000;
+}
+.stock .stock_num .stock_success{
+    margin-left: 20px;
+    background: #0bb20c;
+    color: #fff;
+}
+
+/* 增加库存和减少库存结束 */
+
+/* 底部显示总金额 */
+.footer{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+}
+.footer .footer_con{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: #27AE60;
+    display: flex;
+}
+.footer .footer_con .footer_l{
+    flex: 1
+}
+.footer .footer_con .footer_l a{
+    width: auto;
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+    background: #e67e22;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+}
+.footer .footer_con .footer_l .beihuo_a{
+    position: relative;
+}
+/* .footer .footer_con .footer_l .beihuo_a .redbei{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    top: -10px;
+    right: 5px;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: red;
+    font-size: 10px;
+} */
+.footer .footer_con .footer_l span{
+    width: 119px;
+    height: 100%;
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    text-align: left;
+}
+.footer .footer_con .footer_l span::after{
+    content: '元';
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+}
+
+.footer .footer_con .footer_r{
+    flex: 1;
+    text-align: right;
+    display: flex;
+}
+.footer .footer_con .footer_r a{
+    /* width: auto;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    color: #fff;
+    margin: 0 8px; */
+    flex: 1;
+    text-align: center;
+    color: #fff;
+}
+
+.footer .footer_con .footer_r .auto_beihuo{
+    flex: 2;
+}
+.footer .footer_con .footer_r .preview_peis{
+    /* width: 60px;
+    height: 30px;
+    line-height: 30px;
+    background: #e67e22;
+    padding: 0 10px;
+    margin-right: 10px; */
+    flex: 2;
+    background: #e67e22;
+    padding: 0 4px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 4px;
+    margin-top: 7px;
+}
+
+/* 底部显示总金额结束 */
+
+
+/* 自动备货 */
+.autoBeiHuo{
+    width: 80%;
+    height: auto;
+    background:#fafafc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    z-index: 9999;
+    overflow: scroll;
+    padding: 20px 3px 7px 3px;
+    display: none
+}
+.autoBeiHuo span{
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 12px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 16px;
+}
+.autoBeiHuo a{display: inline-block;width: 110px;line-height: 35px;font-size: 16px;}
+.autoBeiHuo .gd_ms{color: rgb(33, 179, 94);border-left: 1px solid#eae8e8;}
+
+/* 备货弹框 */
+.card{
+    width: 80%;
+    height: 38%;
+    background:#fafafc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    z-index: 9999;
+    overflow: scroll;
+    display: none
+}
+.card .templateList{width: auto;height: auto}
+.card .templateList ul{width: 95%;height: auto;margin: 0 auto}
+.card .templateList ul li{width: 100%;line-height: 35px;text-align: left;border-bottom: 1px solid rgb(236, 236, 236)}
+.card .templateList ul li a{width: 100%;height: 100%;font-size: 15px}
+.card .templateList ul li a .templateName{font-size: 16px;color: #000}
+.card .card_cancel{width: 100%;line-height: 35px;text-align: center;font-size: 16px;color: #000;display: block;position: absolute;bottom: 2px;background: #f1f1f1}
+
+/* 模板添加成功 */
+.stockTrmalateb{
+    width: 80%;
+    height: auto;
+    background:#fafafc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+    padding: 10px 1px;
+    border-radius: 5px;
+    display: none;
+}
+.stockTrmalateb i{font-size: 5rem;color: #0bb20c}
+.stockTrmalateb p{font-size: 16px;margin: 10px 0}
+.stockTrmalateb a{display: block;font-size: 14px;width: 100%;line-height: 40px;text-align: center;color: #0bb20c;border-top: 1px solid #ddd}
+
+/* 模板添加成功结束 */

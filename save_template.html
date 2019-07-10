@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>校园零食</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/save_template.css">
+    <link rel="stylesheet" href="./css/iconfont_peis.css">
+    <link rel="stylesheet" href="./css/iconfont_beihuo.css">
+    <link rel="stylesheet" type="text/css" href="./css/swiper-3.3.1.min.css" />
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: hidden;
+            background: #fff
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            height: calc(110vh - 120px)
+        }
+
+        .swiper-slide {
+            height: auto;
+            background: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .list-group {
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+        /* 下拉刷新结束 */
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <!-- swiper2 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper w">
+                <div class="swiper-slide d" style="margin-top:0">
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper" id="swiper_data">
+                            <div class="swiper-slide list-group" data-attrs="group_a">
+                                <div class="con">
+                                    <p style="width: 95%;text-align:left;margin:0 auto;">预览配送单</p>
+                                    <a href="javascript:" class="commodity_a" data-commodId="1">
+                                        <div class="product">
+                                            
+                                            <div class="product_bot">
+                                                <span class="add_product_name">冰红茶</span>
+                                                <span class="curCommodityPrise" style="display: none"></span>
+                                                <span class="product_moneys">3.5</span>
+                                                <span class="add_i"><i class="iconfont iconjia"></i></span>
+                                                <span class="add_product_text">0</span>
+                                                <span class="reduce_i"><i class="iconfont iconjian"></i></span>
+                                                <div style="clear: both"></div>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                    </a>
+
+                                    <a href="javascript:" class="commodity_a" data-commodId="1">
+                                        <div class="product">
+                                            <div class="product_bot">
+                                                <span class="add_product_name">营养快线</span>
+                                                <span class="curCommodityPrise" style="display: none"></span>
+                                                <span class="product_moneys">6.0</span>
+                                                <span class="add_i"><i class="iconfont iconjia"></i></span>
+                                                <span class="add_product_text">0</span>
+                                                <span class="reduce_i"><i class="iconfont iconjian"></i></span>
+                                                <div style="clear: both"></div>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                    </a>
+
+                                    <a href="javascript:" class="commodity_a" data-commodId="1">
+                                        <div class="product">
+                                            <div class="product_bot">
+                                                <span class="add_product_name">红牛</span>
+                                                <span class="curCommodityPrise" style="display: none"></span>
+                                                <span class="product_moneys">8.0</span>
+                                                <span class="add_i"><i class="iconfont iconjia"></i></span>
+                                                <span class="add_product_text">0</span>
+                                                <span class="reduce_i"><i class="iconfont iconjian"></i></span>
+                                                <div style="clear: both"></div>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+        <!-- 遮盖层 -->
+        <div class="cover"></div>
+        <!-- 遮盖层结束 -->
+
+        <!-- 增加库存和减少库存 -->
+        <div class="stock" style="display: none">
+            <span>葡萄汁出库</span>
+            <div class="stock_num" style="background: #fff">
+                <span>数量</span>
+                <input type="text" name="stock_num_ipt" class="stock_num_ipt" placeholder="修改数量" />
+            </div>
+            <div class="stock_num" style="margin-top: 15px;">
+                <button class="stock_cancel">取消</button>
+                <button class="stock_success">完成</button>
+            </div>
+        </div>
+        <!-- 增加库存和减少库存结束 -->
+
+        <!-- 弹框 模板名称 -->
+        <div class="stockTrmalate">
+            <p>模板名称</p>
+            <div class="stockTrmalate_num">
+                <input type="text" name="stockTrmalate_num_ipt" class="stockTrmalate_num_ipt" placeholder="请输入" />
+            </div>
+            <div class="stockTrmalate_num" style="margin-top: 15px;">
+                <button class="stockTrmalate_cancel">取消</button>
+                <button class="stockTrmalate_success">完成</button>
+            </div>
+        </div>
+        <!-- 弹框 模板名称结束 -->
+        
+        <!-- 模板保存成功 -->
+        <div class="stockTrmalateb">
+            <i class="iconfont iconxuanz"></i>
+            <p>模板保存成功</p>
+            <a href="template.html">查看模板列表</a>
+            <a href="javascript:" class="canel_tb" style="border-bottom: 1px solid #ddd">继续制作模板</a>
+        </div>
+        <!-- 模板保存成功结束 -->
+
+
+
+        <!-- 底部显示总金额 -->
+        <div class="footer">
+            <p>给新21号403备货,零食盒子剩余金额: 16元</p>
+            <div class="footer_con">
+                <div class="footer_l">
+                    <a href="javascript:" class="beihuo_a">备货</a>
+                    <span class="beihuo_money">0 </span>
+                </div>
+                <div class="footer_r">
+                    <a href="javascript:" class="preview_peis">保存模板</a>
+                </div>
+            </div>
+        </div>
+        <!-- 底部显示总金额结束 -->
+
+
+    </div>
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/save_template.js"></script>
+    <script type="text/javascript" src="./js/swiper-3.4.0.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var loadFlag = true;
+        var onloadnum = 5; //页面加载时获取的个数
+        var swiper_a_num = 0; //上拉或下拉加载时递增的数
+        var swipersize = 5; //上拉或下拉时每次加载的个数
+
+        // 页面加载
+        document.onreadystatechange = function () {
+            if (document.readyState == 'complete') {
+
+            }
+        }
+
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            scrollbar: '.swiper-scrollbar',
+            slidesPerView: 'auto',
+            mousewheelControl: true,
+            freeMode: true,
+            onTouchMove: function (swiper) { //手动滑动中触发
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+            },
+            onTouchEnd: function (swiper) {
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+
+                var identName = document.getElementsByClassName('swiper-slide-active')[0];
+
+
+
+                // 上拉加载
+                if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                    
+                    // ajax_common(tabId, onloadnum, swipersize);
+                    ajax_common();
+                }
+                return false;
+            }
+        });
+
+        // mySwiper2滑动不用了但不能注释
+        var mySwiper2 = new Swiper('.swiper-container2', {
+            onTransitionEnd: function (swiper) {
+                mySwiper.update();
+            }
+        });
+
+        // 切换页面
+        $('.tab').on('click', 'a', function () {
+            var swiper_a_num = 0;
+
+
+            $('.swiper-slide-active').eq(0).html(''); //清空
+            $(this).addClass('active').siblings('a').removeClass('active');
+
+            mySwiper2.slideTo($(this).index(), 500, false);
+
+            // ajax_common(tabId, onloadnum, swipersize);
+            mySwiper.update(); // 重新计算高度;
+        });
+
+        //上拉,切换页面时用于获取数据
+        function ajax_common() {
+
+            setTimeout(() => {
+                for (let i = 0 ; i < onloadnum ; i++) {
+                    swiper_c_num = swiper_c_num + 1;
+                        
+                                $(".list-group").eq(mySwiper2.activeIndex).append(`<a href="javascript:" class="commodity_a" data-commodId="1">
+                                        <div class="product">
+                                            <div class="product_bot">
+                                                <span class="add_product_name">红牛</span>
+                                                <span class="curCommodityPrise" style="display: none"></span>
+                                                <span class="product_moneys">8.0</span>
+                                                <span class="add_i"><i class="iconfont iconjia"></i></span>
+                                                <span class="add_product_text">0</span>
+                                                <span class="reduce_i"><i class="iconfont iconjian"></i></span>
+                                                <div style="clear: both"></div>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                    </a>
+                                `);
+                            }
+                            $(".loadtip").html('上拉加载更多...');
+                            mySwiper.update(); // 重新计算高度;
+
+            }, 800);
+
+            // $.ajax({
+            //     url : '',
+            //     type : 'POST',
+            //     data : {
+            //         'tabId' : tabId,
+            //         'onloadnum' : onloadnum,
+            //         'swipersize' : swipersize
+            //     },
+            //      success : function() {},
+            //      error : function() {}
+            // });
+
+
+        }
+    </script>
+
+</body>
+
+</html>

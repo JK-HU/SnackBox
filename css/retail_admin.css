@@ -1,0 +1,339 @@
+.deliver_search{
+    margin-top: 62px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #fff;
+}
+.deliver_search .deliver_search_con{
+    width: 92%;
+    height: auto;
+    margin: 0 auto;
+}
+.deliver_search .deliver_search_con input{
+    width: 170px;
+    height: 34px;
+    display: inline-block;
+    padding: 0 15px;
+}
+.deliver_search .deliver_search_con a{
+    width: 41px;
+    height: 100%;
+    display: inline-block;
+    
+}
+.deliver_search .deliver_search_con button{
+    width: 70px;
+    height: 28px;
+    display: inline-block;
+
+}
+
+/* 选择日期 */
+.choice_date{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #fff;
+}
+.choice_date .choice_date_con{
+    width: 92%;
+    height: auto;
+    margin: 0px auto 0 auto;
+    border-top: 1px solid #dddbdb;
+
+}
+.choice_date .choice_date_con span{
+    width: auto;
+    height: 100%;
+    display: inline-block;
+
+}
+.choice_date .choice_date_con input{
+    width: 75%;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: right;
+}
+
+/* 选择日期结束 */
+
+/* 排序 */
+.sort{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #fff;
+}
+.sort .sort_con{
+    width: 92%;
+    height: auto;
+    margin: 0px auto 0 auto;
+    border-top: 1px solid #dddbdb;
+}
+.sort .sort_con a{
+    width: 147px;
+    height: 45px;
+    line-height: 45px;
+    display: inline-block;
+    text-align: left;
+    color: #3498DB;
+}
+
+.qtul{
+    width: 50%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    z-index: 999;
+    display: none;
+}
+.qtul .sort_li{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+.qtul .sort_li a{
+    width: 93%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+/* 排序结束 */
+
+/* 备货,修改,删除,二维码 */
+.bh_xg{
+    width: 100%;
+    height: auto;
+    line-height: 40px;
+    background: #fff;
+    display: none;
+}
+.bh_xg .bh_xg_con{
+    width: 92%;
+    height: auto;
+    margin: 0px auto 0 auto;
+    padding-top: 6px;
+
+}
+.bh_xg .bh_xg_con span{
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    background-color: #2ECC71;
+    color: #fff;
+    border-radius: 4px;
+    margin-left: 33px;
+    float: left;
+    
+}
+.bh_xg .bh_xg_con .emw{
+    margin-right: 50px;
+}
+/* 备货,修改,删除,二维码结束 */
+
+
+/* 批量下载等功能开始 */
+.pl{
+    width: 100%;
+    height: auto;
+    line-height: 40px;
+    background: #fff;
+    display: none;
+}
+.pl a{color:#3498DB;flex: 1}
+.pl .d_ewm{}
+.pl .sz{}
+.pl .pl_lshz{}
+.pl .tj_lshz{}
+
+/* 批量下载等功能结束 */
+
+
+/* 已经补货列表 */
+.buhuo_list{
+    width: 100%;
+    height: auto;
+    line-height: 40px;
+    background: #fff;
+}
+.buhuo_list .buhuo_list_con{
+    width: 92%;
+    height: auto;
+    margin: 0px auto 0 auto;
+    border-top: 1px solid #dddbdb;
+    border-bottom: 1px solid #dddbdb;
+
+}
+.buhuo_list .buhuo_list_con span{
+    width: auto;
+    height: 100%;
+    display: inline-block;
+
+}
+.buhuo_list .buhuo_list_con a{
+    width: auto;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: right;
+    color: #3498DB;
+}
+/* 已经补货列表结束 */
+
+.con{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 7rem;
+}
+/* .con a{
+    width: 100%;
+    height: 100%;
+    line-height: 24px;
+    display: block;
+}
+.con a:last-child{
+    margin-bottom: 12rem;
+    padding-bottom: 12rem;
+} */
+.commodity_a{
+    width: 100%;
+    height: auto;
+    line-height: 24px;
+    display: block;
+}
+.commodity_a:last-child{
+    margin-bottom: 12rem;
+    padding-bottom: 12rem;
+}
+.cell{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid #d9d9d9;
+    display: flex;
+
+}
+.cell .cell_a{
+    flex: 5;
+    height: auto;
+
+}
+.cell .cell_a span{
+    display: block;
+    text-align: left;
+    margin: 5px 0;
+}
+.cell .cell_a .delivery_title{
+    font-size: 14px;
+    color: #000;
+}
+.cell .cell_a .delivery_time{
+    color: #3498DB;
+}
+
+.cell .cell_b{
+    flex: 1;
+    height: auto;
+    display: none;
+}
+.cell .cell_b i{
+    display: inline-block;
+    width: 35px;
+    /* height: 46px; */
+    line-height: 50px;
+    margin-top: 3%;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+.iconxuanz{
+    font-size: 21px;
+    color: #09bb07;
+}
+
+/* 遮盖层 */
+.cover{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+    background-color: rgba(0,0,0,.6);
+    z-index: 99;
+
+}
+
+/* 弹框_功能 */
+.card{
+    position: fixed;
+    width: 85%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: #fafafc;
+    text-align: center;
+    border-radius: 3px;
+    padding: 15px 5px;
+    overflow: hidden;
+    display: none;
+    z-index: 999;
+}
+.card .card_tit{
+    height: 20px;
+    line-height: 20px;
+    font-size: 17px;
+
+}
+.card .card_table_wrap{
+    width: 100%;
+    height: auto;
+    margin-top: 7px;
+}
+.card .card_table_wrap .card_ul{
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+.card .card_table_wrap .card_ul .card_li{
+    width: 45%;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    border-bottom: 1px solid #d2d1d1;
+    margin-right: 12px;
+    margin-top: 4px;
+    float: left;
+}
+.card .card_table_wrap .card_ul .card_li:nth-child(2n+2){
+    margin-right: 0;
+}
+.card .card_table_wrap .card_ul .card_li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 16px;
+    color: #0bb20c;
+}
+.card .card_table_wrap .card_ul .card_delete a{
+    color: red;
+}
+.card .card_table_wrap .card_ul .cancel{
+    width: 100%;
+    border-bottom: none;
+    margin-top: 20px;
+    border: 1px solid #09bb07;
+}
+
+/* 弹框_功能结束 */
+

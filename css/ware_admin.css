@@ -1,0 +1,327 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    background: #fff;
+}
+ul,li{list-style: none;padding: 0;margin: 0;}
+a{
+    outline:none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+}
+input{
+ 
+	outline:none;  
+	border:0px;
+}
+button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+#wrap{
+    max-width: 100%;
+    height: auto;
+    background-color: #f4f4f4;
+    overflow: hidden;
+}
+.head{
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e4e0e0;
+    z-index: 9999;
+}
+.head .headcon{
+    width: 96%;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    position: relative;
+}
+.head .headcon > a{
+    position: absolute;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    left: 0;
+}
+.head .headcon > a > span{
+    display: inline-block;
+}
+.head .headcon > a > span:nth-child(1){
+    
+    
+    font-size: 23px;
+    color: #1d1c1c;
+}
+.head .headcon > a > span:nth-child(2){
+    
+    font-size: 23px;
+    color: #827c7c;
+}
+.head .headcon .cj{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* container */
+.container{
+    margin-top: 53px !important;
+}
+.swiper-wrapper{
+    background: #fff !important;
+
+}
+
+/* container结束 */
+
+/* 搜索 */
+.deliver_search{
+    margin-top: 62px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #fff;
+}
+.deliver_search .deliver_search_con{
+    width: 92%;
+    height: auto;
+    margin: 0 auto;
+}
+.deliver_search .deliver_search_con input{
+    width: 170px;
+    height: 34px;
+    display: inline-block;
+    padding: 0 15px;
+}
+.deliver_search .deliver_search_con a{
+    width: 41px;
+    height: 100%;
+    display: inline-block;
+    
+}
+.deliver_search .deliver_search_con button{
+    width: 70px;
+    height: 28px;
+    display: inline-block;
+
+}
+/* 搜索结束 */
+
+/* 已经补货列表 */
+.buhuo_list{
+    width: 100%;
+    height: auto;
+    line-height: 40px;
+    background: #fff;
+}
+.buhuo_list .buhuo_list_con{
+    width: 92%;
+    height: auto;
+    margin: 0px auto 0 auto;
+    border-top: 1px solid #dddbdb;
+    border-bottom: 1px solid #dddbdb;
+
+}
+.buhuo_list .buhuo_list_con span{
+    width: auto;
+    height: 100%;
+    display: inline-block;
+
+}
+.buhuo_list .buhuo_list_con a{
+    width: 56%;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: right;
+    color: #3498DB;
+}
+/* 已经补货列表结束 */
+
+/* 内容 */
+.con{
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 4px 4px;
+    background: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 13px;
+
+}
+.con > a{
+    width: auto;
+    height: 100%;
+    display: block;
+    padding: 10px 8px;
+    border-bottom: 1px solid #eee;
+}
+.con > a .product{
+    display: flex;
+    flex-direction: column;
+}
+.con > a .product .product_top{
+    flex: 1;
+}
+.con > a .product .product_top img{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    float: left;
+}
+.con > a .product .product_top .product_t_deail{
+    width: 74%;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    float: left;
+    text-align: left;
+    overflow: hidden;
+}
+
+.con > a .product .product_bot{
+    flex: 1;
+    margin-top: 15px;
+}
+
+.con > a .product .product_bot span{
+    display: inline-block;
+    width: 66px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+}   
+
+.con > a .product .product_bot .delete_product{
+    float: left;
+    margin-left: 15px;
+    background: red;
+}
+.con > a .product .product_bot .update_product{
+    background: #2ECC71;
+    margin-left: 20px;
+}
+.con > a .product .product_bot .add_product{
+    background: #2ECC71;
+    margin-left: 8px;
+}
+.con > a .product .product_bot .reduce_product{
+    background: #2ECC71;
+    margin-left: 8px;
+}
+
+/* cover */
+.cover{position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,0.6);top:0;z-index: 999;display: none; }
+/* cover结束 */
+
+/* 增加库存和减少库存 */
+.stock{
+    width: 80%;
+    height: 20%;
+    background:#fafafc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+}
+.stock > span{
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.stock .stock_num{
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+
+}
+.stock .stock_num .stock_num_ipt{
+    width: auto;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 5px;
+
+}
+.stock .stock_num button{
+    width: 85px;
+    height: 27px;
+    border: none;
+    border-radius: 4px;
+}
+
+.stock .stock_num .stock_cancel{
+    margin-right: 20px;
+    color: #000;
+}
+.stock .stock_num .stock_success{
+    margin-left: 20px;
+    background: #0bb20c;
+    color: #fff;
+}
+
+/* 增加库存和减少库存结束 */
+
+.iconxuanz{
+    color: #2ECC71;
+    font-size: 18px;
+}
+.bindIcon{
+    display: none;
+}
+
+/* 确认删除 */
+.confirm{
+    width: 65%;
+    height: 99px;
+    background: #fff;
+    border-radius: 4px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+    display: none;
+}
+.confirm span{
+    display: block;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+}
+.confirm button{
+    border: none;
+    width: 60px;
+    height: 25px;
+    background: #e4e0e0;
+    border-radius: 4px;
+    
+}
+.confirm .confirm_confirm{
+    background: #2ECC71;
+    color: #fff;
+    margin-left: 15%;
+}
+
+/* 确认删除结束 */
+
+/* 批量删除 */
+.batch{width: 100%;line-height: 34px;background: #fff;display: none}
+.batch .batch_con{width: 92%;margin: 0 auto;text-align: left;border-bottom: 1px solid #dddbdb;}
+.batch .batch_con a{font-size: 15px;color: #3498DB;display: inline-block;margin-right: 20px;}

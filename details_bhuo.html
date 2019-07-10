@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>校园零食</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/details_bhuo.css">
+    <link rel="stylesheet" href="./css/iconfont_peis.css">
+    <link rel="stylesheet" type="text/css" href="./css/swiper-3.3.1.min.css" />
+    <style>
+        body {
+            min-width: 320px;
+            max-width: 640px;
+            margin: 0 auto;
+            color: #333;
+            padding: 0;
+            font-family: "Microsoft Yahei";
+            text-align: center;
+        }
+
+        .padd_40 {
+            padding-top: 80px;
+            background: #F5F5F5;
+        }
+
+        .a {
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            border-bottom: 1px #ccc solid;
+            background: #f50;
+            color: #fff;
+        }
+
+        .tab {
+            display: flex;
+            line-height: 51px;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            z-index: 999;
+            border-bottom: 1px #ccc solid;
+            background: #fff;
+        }
+
+        .tab a {
+            width: 25%;
+            background: #fff;
+            text-align: center;
+            color: #000;
+        }
+
+        .tab .active {
+            border-bottom: 1px #f50 solid;
+            color: #f50;
+        }
+
+        .panel {
+            margin: 0;
+        }
+
+        .refreshtip {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            margin: 10px 0;
+            text-align: center;
+            color: #999;
+        }
+
+        .swiper-container {
+            overflow: hidden;
+            background: #fff
+        }
+
+        .loadtip {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #ddd;
+        }
+
+        .swiper-container,
+        .w {
+            height: calc(100vh - 120px)
+        }
+
+        .swiper-slide {
+            height: auto;
+            background: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .list-group {
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #fff;
+        }
+
+        .list-group-item:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        /* 下拉刷新 */
+        .downtips {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            transform: translateY(-46px);
+        }
+
+        .downtips>span:nth-child(1) {
+            display: block;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: saddlebrown;
+            margin: auto;
+        }
+
+        .downtips>span:nth-child(2) {
+            display: block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #7e7b7b;
+            margin: auto;
+        }
+
+        /* 下拉刷新结束 */
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <!-- 商品订单号 -->
+        <p class="commodity_order_num">1234567</p>
+        <!-- 商品订单号结束 -->
+
+        <!-- 零食盒子 -->
+        <div class="commodity_order_line">
+            <div class="commodity_order_line_con">
+                <span>零食盒子</span>
+                <span class="commodity_order_a">11</span>
+            </div>
+        </div>
+        <!-- 零食盒子结束 -->
+
+        <!-- 操作人 --> 
+        <div class="commodity_order_line">
+            <div class="commodity_order_line_con">
+                <span>操 作 人 </span>
+                <span class="commodity_order_a commodity_order_people">11</span>
+            </div>
+        </div>
+        <!-- 操作人结束 -->
+
+        <!-- 联系手机 --> 
+        <div class="commodity_order_line">
+            <div class="commodity_order_line_con">
+                <span>联系手机</span>
+                <span class="commodity_order_a commodity_order_phone">17855345052</span>
+            </div>
+        </div>
+        <!-- 联系手机结束 -->
+
+        <!-- 创建时间 -->
+        <div class="commodity_order_line">
+            <div class="commodity_order_line_con">
+                <span>操作时间</span>
+                <span class="commodity_order_a commodity_order_times">2019-03-13 14:27:52</span>
+            </div>
+        </div>
+        <!-- 创建时间结束 -->
+
+        <!-- 创建记录 -->
+        <div class="commodity_order_line">
+            <div class="commodity_order_line_con">
+                <span>创建记录</span>
+                <span class="commodity_order_a commodity_order_record">21号503申请补货,2018/11/30 下午8:14:35修改,Wed Dec 05 2018 21:45:29 GMT+0800 (CST)修改,2018/12/24 下午10:54:04修改,Sat Dec 29 2018 15:31:46 GMT+0800 (CST)修改</span>
+            </div>
+        </div>
+        <!-- 创建记录结束 -->
+
+        <!-- 添加备注 -->
+        <div class="commodity_order_line">
+            <div class="commodity_order_line_con">
+                    <span class="nc_line_remarks">添加备注</span>
+                    <button class="nc_line_remarks_btn">保存</button>
+                    <input type="text" name="nc_line_remarks" class="nc_line_remarks_ipt" />
+            </div>
+        </div>
+        <!-- 添加备注结束 -->
+
+        <!-- 增加库存 -->
+        <div class="cover"></div>
+        <!-- 增加库存结束 -->
+
+        <!-- swiper2 -->
+        <div class="swiper-container" style="margin-top: 10px">
+            <div class="swiper-wrapper w">
+                <div class="swiper-slide d" style="margin-top:0">
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper" id="swiper_data">
+                            <div class="swiper-slide list-group" data-attrs="group_a">
+                                <div class="con">
+
+                                    <a href="javascript:" class="pdianRecord">
+                                        <div class="cell">
+                                            <div class="cell_a">
+                                                <span class="delivery_title">小卫龙</span>
+                                            </div>
+                                            <div class="cell_b">
+                                                <div class="cell_b_w">
+                                                    <span class="cell_b_prise">2</span> 件
+                                                </div>
+                                            </div>
+                                            <div class="cell_c" style="display: none">
+                                                <i class="iconfont iconwxuanz"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="javascript:" class="pdianRecord">
+                                        <div class="cell">
+                                            <div class="cell_a">
+                                                <span class="delivery_title">小滑头辣条</span>
+                                            </div>
+                                            <div class="cell_b">
+                                                <div class="cell_b_w">
+                                                    <span class="cell_b_prise">12</span> 件
+                                                </div>
+                                            </div>
+                                            <div class="cell_c" style="display: none">
+                                                <i class="iconfont iconwxuanz"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/details_bhuo.js"></script>
+    <script type="text/javascript" src="./js/swiper-3.4.0.jquery.min.js"></script>
+    <script type="text/javascript" src="./js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var loadFlag = true;
+        var onloadnum = 5; //页面加载时获取的个数
+        var swiper_a_num = 0; //上拉或下拉加载时递增的数
+        var swipersize = 5; //上拉或下拉时每次加载的个数
+
+        // 页面加载
+        document.onreadystatechange = function () {
+            if (document.readyState == 'complete') {
+
+            }
+        }
+
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical',
+            scrollbar: '.swiper-scrollbar',
+            slidesPerView: 'auto',
+            mousewheelControl: true,
+            freeMode: true,
+            onTouchMove: function (swiper) { //手动滑动中触发
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+            },
+            onTouchEnd: function (swiper) {
+                var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+                var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+
+                var identName = document.getElementsByClassName('swiper-slide-active')[0];
+                var tabId = $('.tab a.active').attr('data-id'); //tab选中的索引
+
+
+                // 上拉加载
+                if (mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                    // console.log("已经到达底部！");
+                    if (loadFlag) {
+                        $(".loadtip").html('正在加载...');
+                    } else {
+                        $(".loadtip").html('没有更多啦！');
+                    }
+                    // ajax_common(tabId, onloadnum, swipersize);
+                }
+                return false;
+            }
+        });
+
+        // mySwiper2滑动不用了但不能注释
+        var mySwiper2 = new Swiper('.swiper-container2', {
+            onTransitionEnd: function (swiper) {
+                mySwiper.update();
+            }
+        });
+
+        // 切换页面
+        $('.tab').on('click', 'a', function () {
+            var swiper_a_num = 0;
+            var tabId = $(this).attr('data-id'); //当前tabs的索引
+            console.log(tabId)
+            var tabtxt = $(this).text();
+            $('.swiper-slide-active').eq(0).html(''); //清空
+            $(this).addClass('active').siblings('a').removeClass('active');
+            mySwiper2.slideTo($(this).index(), 500, false);
+
+            // ajax_common(tabId, onloadnum, swipersize);
+            mySwiper.update(); // 重新计算高度;
+        });
+
+        //上拉,切换页面时用于获取数据
+        function ajax_common() {
+
+            // $.ajax({
+            //     url : '',
+            //     type : 'POST',
+            //     data : {
+            //         'tabId' : tabId,
+            //         'onloadnum' : onloadnum,
+            //         'swipersize' : swipersize
+            //     },
+            //      success : function() {},
+            //      error : function() {}
+            // });
+
+
+        }
+    </script>
+
+</body>
+
+</html>

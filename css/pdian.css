@@ -1,0 +1,124 @@
+.con{
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 4px 4px;
+    background: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 13px;
+
+}
+.con > a{
+    width: auto;
+    height: 100%;
+    display: block;
+    padding: 10px 8px;
+    border-bottom: 1px solid #eee;
+}
+.con > a .product{
+    display: flex;
+    
+}
+.con > a .product .product_l{
+    flex: 1;
+}
+.con > a .product .product_l img{
+    float: left;
+    margin: 10px 8px 0 auto;
+}
+.con > a .product .product_l .product_l_line{
+    float: left;
+}
+.con > a .product .product_l .product_l_line .product_name{
+    font-size: 14px;
+    color: #000;
+}
+.con > a .product .product_l .product_l_line .product_prise{
+    font-size: 12px;
+}
+.con > a .product .product_l .product_l_line .product_zl{
+    color: gray;
+}
+
+.con > a .product .product_l .product_l_line .state{
+    color: red;
+}
+
+
+.con > a .product .product_r{
+    flex: 1;
+    line-height: 54px;
+}
+.con > a .product .product_r span{
+    display: inline-block;
+}
+.con > a .product .product_r .product_r_sy{
+    color: deepskyblue;
+    font-size: 12px;
+    margin: 0 20px;
+}
+.con > a .product .product_r .product_r_sy::before{
+    content: '应当剩余:';
+    display: inline-block;
+    color: deepskyblue;
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+.con > a .product .product_r .product_r_state{
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #ff3a3a;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+/* 底部footer */
+.footer{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+}
+.footer .footer_con{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: #27AE60;
+    display: flex;
+}
+.footer .footer_con a{
+    width: 25%;
+    height: 100%;
+    display: block;
+    color: #fff;
+}
+
+/* cover */
+.cover{position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,.6);top:0;z-index: 1000;display: none; }
+/* cover结束 */
+
+/* card 点击盘点弹框 */
+.card{
+    width: 80%;
+    height: auto;
+    padding: 20px 3px 11px 3px;
+    background:#fafafc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    z-index: 9999;
+    overflow: scroll;
+    display: none
+}
+.card p{font-size: 16px;margin: 14px 1px;}
+
+.card button{width: 99px;line-height: 32px;border: none;border-radius: 4px;}
+.card .determine{background: #27AE60;color: #fff;margin-left: 20px}

@@ -1,0 +1,62 @@
+body{
+    background: #ebebeb;
+}
+.wrap{
+    width: 100%;
+    height: auto;
+    margin-top: 53%;
+}
+.wrap .phone{
+    width: 80%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+    margin: 0 auto;
+    text-align: center;
+    color:#000;
+    font-size: 20px;
+}
+.wrap .admin{
+    display: block;
+    width: 80%;
+    height: 28px;
+    line-height: 28px;
+    font-size: 16px;
+    margin: 0 auto 25px auto;
+    text-align: center;
+
+}
+.wrap .login_in{
+    display: block;
+    width: 85%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+    margin: 13px auto;
+    text-align: center;
+    color:#fff;
+    font-size: 18px;
+    background-color: #2ECC71;
+    border-radius: 5px;
+}
+.wrap .login_out{
+    display: block;
+    width: 85%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+    margin: 0 auto;
+    text-align: center;
+    color:#fff;
+    font-size: 18px;
+    background-color: #2ECC71;
+    border-radius: 5px;
+}
+.wrap .descript{
+    display: block;
+    width: 80%;
+    font-size: 15px;
+    margin: 55px auto 0 auto;
+    text-align: center;
+    color: #a6a3a3;
+}

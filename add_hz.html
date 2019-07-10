@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>校园零食</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/add_hz.css">
+</head>
+<body>
+    <!-- add_hz.html 添加盒子页面 -->
+    <div class="wrap">
+        <div class="line">
+            <span>零食盒子页面</span>
+            <input type="text" name="lshz" class="lshz" placeholder="输入新建零食盒子名" />
+        </div>
+        <div class="line">
+            <textarea name="lshzDescription" id="lshzDescription" placeholder="零食盒子说明,补货商品偏好等相关说明(选填)"></textarea>
+        </div>
+        <span class="descripts">每个零食盒子有独立的二维码，在建立盒子之后可以下载打印，您也可以联系客服购买官方印制好的二维码贴纸。如果您已经购买了官方贴纸，可以绑定二维码，如果您还没有官方二维码贴纸，之后还可以绑定，现在可以不用操作绑定二维码 </span>
+
+    </div>
+
+    <button class="confirm">确定</button>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+    
+    $('.confirm').bind('click',function() {
+        if ($('.lshz').val() == '') {
+            alert('盒子名不能为空');
+            return false;
+        }
+        $.ajax({
+            url : '',
+            data : {
+                name : $('.lshz').val(),
+                description : $('#lshzDescription').val()
+            },
+            success : function() {},
+            error : function() {}
+
+        })
+    });
+    </script>
+</body>
+</html>
