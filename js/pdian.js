@@ -28,7 +28,6 @@
             if ($('.product_r_state').eq(i).attr('data-lookState') == 'no') {
                 stataArr.push($('.product_r_state').eq(i).attr('data-lookState'))
             }
-               
         }
 
         $('.noPdian').text(stataArr.length);
@@ -42,10 +41,12 @@
         $('.determine').click(function() {
             $('.card').attr('style','display: none');
             $('.cover').attr('style','display: none');
-            window.location.href='pdian_pd.html';
+            // window.location.href='pdian.html';
         });
 
     });
+
+    
 
 
 })();

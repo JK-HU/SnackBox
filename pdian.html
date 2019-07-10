@@ -9,6 +9,7 @@
     <title>校园零食</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/pdian.css">
+    <link rel="stylesheet" href="./css/iconfont_peis.css">
     <link rel="stylesheet" href="./css/iconfont_beihuo.css">
     <link rel="stylesheet" type="text/css" href="./css/swiper-3.3.1.min.css" />
     <style>
@@ -130,14 +131,39 @@
             margin: auto;
         }
         /* 下拉刷新结束 */
+        .pd_btn{display: block;width: 90%;line-height: 35px;background: #2ECC71;color: #fff;margin: 10px auto;border: none;border-radius: 5px}
+        .cardSuccess{
+        width: 80%;
+        height: auto;
+        background:#fafafc;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 5px;
+        z-index: 9999;
+        overflow: scroll;
+        padding: 8px;
+        display: none;
+        text-align: center;
+        }
+        .cardSuccess i{font-size: 4rem;color: #2ECC71;display: block;margin: 0 auto}
     </style>
 </head>
 <body>
+
+    <!-- 盘点按钮 -->
+    <div class="pd_div" style="display: block">
+        <button class="pd_btn refresh" style="margin-top:40px">刷新</button>
+        <button class="pd_btn confirm">盘点确认</button>
+    </div>
+    <!-- 盘点按钮结束 -->
+
     <div class="container">
 
 
         <!-- swiper2 -->
-        <div class="swiper-container">
+        <div class="swiper-container" style="display: none">
             <div class="swiper-wrapper w">
                 <div class="swiper-slide d" style="margin-top:0">
                     <div class="swiper-container2">
@@ -207,6 +233,14 @@
         <!-- 遮盖层 -->
         <div class="cover"></div>
         <!-- 遮盖层结束 -->
+        
+        <!-- 盘点成功弹框 -->
+        <div class="cardSuccess">
+            <i class="iconfont iconxuanz"></i>
+            <p>盘点成功</p>
+        </div>
+
+        <!-- 盘点成功弹框结束 -->
 
         <!-- 增加库存和减少库存 -->
         <div class="stock" style="display: none">
@@ -238,7 +272,7 @@
                 <a href="javascript:">刷新</a>
                 <a href="deliveryCore.html">配送</a>
                 <a href="pdian_hs.html">回收</a>
-                <a class="pdian">盘点</a>
+                <a class="pdian" href="pdian.html">盘点</a>
             </div>
         </div>
         <!-- 底部显示总金额结束 -->
@@ -255,6 +289,16 @@
         var onloadnum = 5; //页面加载时获取的个数
         var swiper_a_num = 0; //上拉或下拉加载时递增的数
         var swipersize = 5; //上拉或下拉时每次加载的个数
+
+
+        // 点击盘点按钮 显示按钮隐藏显示
+        $('.confirm').click(function() {
+            $('.cardSuccess').attr('style','display:block');
+            $('.cover').attr('style','display:block');
+            setTimeout(function() {
+                window.location.href = 'pdian.html';
+            },2000);
+        })
 
         // 页面加载
         document.onreadystatechange = function () {

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/common.css">
     <style>
     button{display: block;width: 90%;line-height: 35px;background: #2ECC71;color: #fff;margin: 10px auto;border: none;border-radius: 5px}
-    .card{
+    .cardSuccess{
         width: 80%;
         height: auto;
         background:#fafafc;
@@ -24,7 +24,7 @@
         display: none;
         text-align: center;
     }
-    .card i{font-size: 4rem;color: #2ECC71;display: block;margin: 0 auto}
+    .cardSuccess i{font-size: 4rem;color: #2ECC71;display: block;margin: 0 auto}
     .cover{position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,0.6);top:0;z-index: 999;display: none; }
     </style>
 </head>
@@ -32,13 +32,9 @@
 
     <!-- 盘点页面 -->
 
-    <button class="refresh" style="margin-top:40px">刷新</button>
-    <button class="confirm">盘点确认</button>
-
-
     <!-- 盘点成功弹框 -->
     <div class="cover"></div>
-    <div class="card">
+    <div class="cardSuccess">
         <i class="iconfont iconxuanz"></i>
         <p>盘点成功</p>
     </div>
@@ -50,7 +46,7 @@
     <script>
 
         $('.confirm').click(function() {
-            $('.card').attr('style','display:block');
+            $('.cardSuccess').attr('style','display:block');
             $('.cover').attr('style','display:block');
             setTimeout(function() {
                 window.location.href = 'pdian.html';
