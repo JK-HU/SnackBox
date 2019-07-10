@@ -157,7 +157,7 @@
     text-align: right;
     color: #ff6600;
     font-size: 16px;
-    margin-left: 40px;
+    /* margin-left: 40px; */
 }
 .con > a .product .product_bot .product_moneys::before{
     content: '￥';
