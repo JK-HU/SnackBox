@@ -90,7 +90,9 @@
     left: 50%;
     transform: translate(-50%,-50%);
     background: #fff;
-    z-index: 999;
+    z-index: 1001;
+    padding: 10px 1px;
+    border-radius: 5px;
     display: none;
 }
 .qtul .sort_li{
@@ -108,6 +110,8 @@
 }
 
 /* 排序结束 */
+
+
 
 /* 已经补货列表 */
 .buhuo_list{
@@ -209,7 +213,7 @@
     position: absolute;
     top: 0;
     background: rgba(0,0,0,0.56);
-    z-index: 95;
+    z-index: 1000;
     display: none;
 }
 
