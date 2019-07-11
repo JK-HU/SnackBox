@@ -140,8 +140,14 @@
         $('.cover').attr('style','display:none');
         
         window.location.href = 'save_template.html';
-    })
+    });
 
+    // card_cancel 弹框取消按钮
+    $('.card_cancel').bind('click',function() {
+        $('.card').attr('style','display:none');
+        $('.cover').attr('style','display:none')
+
+    });
 
 
 })();
