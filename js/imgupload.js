@@ -52,30 +52,50 @@
                             base64Url: base64Url
                         };
 
+                        // ------这部分获取图标------
                         //imgdataArr.push(imgMsg);
-
                         let fileStreamSize = calculaFileSize(base64Url);
                         let compressAfterImgUrl = "";
                         let compressAfterImgSize = "";
                         let newImg = createNewImg(base64Url);
-
-                        var div = document.createElement("div");
-                        var img = document.createElement("img");
-                        var icons = document.createElement("i");
-                        div.className = 'deposit';
-                        icons.className = 'iconfont icondelete deleimg';
-                        img.src = imgURL;
-                        listImg.push(img);
-                        console.log(listImg);
+                        $('.choiceImg').attr('src',base64Url);
+                        listImg.push($('.choiceImg'));
                         imgId(listImg);
-                        div.appendChild(img);
-                        div.appendChild(icons);
-                        // 删除图片,用于传参
+                        
+                        // let icons = $('.deleimg'); //删除图标
+                        // deleteImgIcon(icons, listImg); 
 
-                        deleteImgIcon(icons, listImg);
+                        // ------这部分获取图标结束------
 
-                        var imglen = listImg.length;
-                        console.log(imglen + '图片个数');
+                        //以下为注释上传图片代码,不要删除
+                            /**
+                            *imgdataArr.push(imgMsg); 
+                            **/
+                        /**
+                         *  let fileStreamSize = calculaFileSize(base64Url);
+                            let compressAfterImgUrl = "";
+                            let compressAfterImgSize = "";
+                            let newImg = createNewImg(base64Url);
+
+                            var div = document.createElement("div");
+                            var img = document.createElement("img");
+                            var icons = document.createElement("i");
+                            div.className = 'deposit';
+                            icons.className = 'iconfont icondelete deleimg';
+                            img.src = imgURL;
+                            listImg.push(img);
+                            console.log(listImg);
+                            imgId(listImg);
+                            div.appendChild(img);
+                            div.appendChild(icons);
+                            // 删除图片,用于传参
+                            deleteImgIcon(icons, listImg);
+                            var imglen = listImg.length;
+                            console.log(imglen + '图片个数'); 
+                         * 
+                         **/
+                        // 以下为注释上传图片代码,不要删除
+                     
                         // 限制图片大小
                         if (fileStreamSize > 5242880) {
                             try { //图片过大可能压缩失败，抛出异常
@@ -123,6 +143,11 @@
         }
     }
 
+    $('.deleimg').bind('click',function() {
+
+        console.log(listImg)
+    });
+
 
     //添加图片ID
     function imgId(listimg) {
@@ -136,7 +161,7 @@
 
     // 删除图片
     function deleteImgIcon(icon, listimg) {
-        // console.log(icon)
+        console.log(icon)
         // var retuimg_id = imgId(listimg);
         //  console.log(retuimg_id);
         

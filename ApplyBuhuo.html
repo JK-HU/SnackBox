@@ -221,7 +221,7 @@
                     <div class="swiper-container2">
                         <div class="swiper-wrapper" id="swiper_data">
                             <div class="swiper-slide list-group" data-attrs="group_a">
-                                <div class="con">
+                                <div class="con" style="display: block">
 
                                     <a href="javascript:" class="detailsList">
                                         <div class="cell">
@@ -262,6 +262,11 @@
                                     </a>
 
                                 </div>
+                                <div class="conc" style="display: none">
+                                    <a href="newapply.html">获取申请零食盒子地址</a>
+                                    <a href="javascript:">申请零食盒子设置</a>
+                                    <!-- <a href="apply_hz_sz.html">申请零食盒子设置</a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -275,7 +280,7 @@
         <div class="stock">
             <span class="stock_names">零食盒子：</span>
             <div class="stock_num" style="background: #fff">
-                <a href="javascript:">查看详情</a>
+                <a href="details_bhuo.html">查看详情</a>
             </div>
             <button class="stock_delete">删除</button>
             <div class="stock_num" style="margin-top: 15px;">
@@ -300,11 +305,45 @@
         var swipersize = 5; //上拉或下拉时每次加载的个数
 
         // 页面加载
-        document.onreadystatechange = function () {
-            if (document.readyState == 'complete') {
+    document.onreadystatechange = function () {
+        if (document.readyState == 'complete') {
 
-            }
+            /**
+             * 
+             *   var mySwiper2 = new Swiper('.swiper-container2',{
+                    initialSlide :2, //初始化索引
+                });
+                $('.tab a').eq(mySwiper2.activeIndex).click(); //触发点击事件
+                mySwiper2.activeIndex = 2; //赋值索引
+                
+                $('.swiper-container2 .swiper-slide-active').css('height', 'auto').siblings('.swiper-slide').css('height', '0px');
+                mySwiper.update();
+                $('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
+                //var identName = $('.swiper-slide-active').eq(1).attr('data-attrs'); // 判断每个页面的data-attrs
+                //ajax_common(identName, 0, onloadnum, 1);
+
+                let tabIndex = $('.tab a.active').index(); //tab选中的索引
+                let tabType = $('.tab a.active').attr('data-type')// tab选中的data-type
+
+                switch (tabIndex) {
+                    case 0:
+                        $('.con').attr('style','display:block');
+                        $('.conc').attr('style','display:none');
+                        break;
+                    case 1:
+                        $('.con').attr('style','display:block');
+                        $('.conc').attr('style','display:none');
+                        break;
+                    case 2:
+                        $('.con').attr('style','display:none');
+                        $('.conc').attr('style','display:block');
+                        break;
+                }
+
+                return false;
+            */
         }
+    }
 
         var mySwiper = new Swiper('.swiper-container', {
             direction: 'vertical',
@@ -321,7 +360,7 @@
                 var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
 
                 var identName = document.getElementsByClassName('swiper-slide-active')[0];
-                var tabId = $('.tab a.active').attr('data-id'); //tab选中的索引
+                // var tabId = $('.tab a.active').attr('data-id'); //tab选中的索引
 
 
                 // 上拉加载
@@ -351,7 +390,7 @@
             mySwiper.update(); // 重新计算高度;
             $('.swiper-slide-active').eq(0).html(''); //清空
             var dataAttrs = $(this).attr('data-attrs');//排序的方式
-            var tabIndex = $('.tab a.active').index(); //tab选中的索引
+            var tabIndex = $('.tab a').eq(mySwiper2.activeIndex); //tab选中的索引
             var tabId = $('.tab a.active').attr('data-id')// tab选中的ID
             console.log(dataAttrs+'排序方式');
             console.log(tabIndex);
@@ -377,12 +416,32 @@
         // 切换页面
         $('.tab').on('click', 'a', function () {
             var swiper_a_num = 0;
-            var tabId = $(this).attr('data-id'); //当前tabs的索引
-            console.log(tabId)
-            var tabtxt = $(this).text();
-            $('.swiper-slide-active').eq(0).html(''); //清空
+            let tabIndex = $(this).index(); //tab选中的索引
+            let tabType = $(this).attr('data-type')// tab选中的data-type
+            console.log(tabType)
+            console.log(tabIndex)
+
+            switch (tabIndex) {
+                case 0:
+                    $('.con').attr('style','display:block');
+                    $('.conc').attr('style','display:none');
+                    break;
+                case 1:
+                    $('.con').attr('style','display:block');
+                    $('.conc').attr('style','display:none');
+                    break;
+                case 2:
+                    $('.con').attr('style','display:none');
+                    $('.conc').attr('style','display:block');
+                    break;
+            }
+            
+            
+            // $('.swiper-slide-active').eq(0).html(''); //清空,演示时暂时注释
             $(this).addClass('active').siblings('a').removeClass('active');
             mySwiper2.slideTo($(this).index(), 500, false);
+
+            
 
             // ajax_common(tabId, onloadnum, swipersize);
             mySwiper.update(); // 重新计算高度;

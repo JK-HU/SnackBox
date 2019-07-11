@@ -35,6 +35,11 @@
     $('.commodityImg').on('click','.commodityImgli',function() {
         $(this).attr('style','border:1px solid #dc2424');
         $(this).siblings().attr('style','border:1px solid #eee');
+
+        let imgSrc = $(this).find('img').attr('src');
+        $('.choiceImg').attr('src',imgSrc);
+
+
     });
 
 

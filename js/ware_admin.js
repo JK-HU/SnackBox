@@ -41,9 +41,27 @@
     });
 
     // // 全选
-    // $('.AllElection').bind('click',function() {
-    //     $('.bindIcon').attr('display','display:block');
-    // });
+        // 点击全选 全部显示
+    
+    $('.AllElection').click(function() {
+        var dataAllelection = $(this).attr('data-allelection'); //全选状态
+
+        if ($(this).attr('data-allelection') == 'true') {
+            $('.bindIcon').find('i').removeClass('iconfont iconxuanz');
+            $('.bindIcon').find('i').addClass('iconfont iconwxuanz');
+            $('.bindIcon').attr('data-iconFlag','no');
+            $(this).attr('data-allelection','false');
+            return false;
+        }
+        if ($(this).attr('data-allelection') == 'false') {
+            $('.bindIcon').find('i').removeClass('iconfont iconwxuanz');
+            $('.bindIcon').find('i').addClass('iconfont iconxuanz');
+            $('.bindIcon').attr('data-iconFlag','yes');
+            $(this).attr('data-allelection','true');
+            return false;
+        }
+    });
+    
 
     // 删除
     $('.con').on('click','.delete_product',function() {
