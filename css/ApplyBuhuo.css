@@ -145,6 +145,21 @@
     height: auto;
     margin-top: 15px;
 }
+.conc{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+.conc a{
+    width: 80%;
+    line-height: 35px;
+    font-size: 16px;
+    color: #3498DB;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+    display: block;
+}
+
 .con a{
     width: 100%;
     height: 100%;
