@@ -280,6 +280,13 @@
         </a>
         <!-- 销售统计结束 -->
 
+        <!-- canvas画统计图 -->
+        
+        <div id="container" style="max-width:800px;height:400px"></div>
+
+        <!-- canvas画统计图结束 -->
+
+
         <!-- 销售商品排行 -->
         <div class="xs_ranking">
             <p style="text-align: left;margin-left:20px;padding-top:10px;font-size:15px;color:#777474">销售商品排行</p>
@@ -384,6 +391,7 @@
 
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/statistics_xs.js"></script>
+    <script type="text/javascript" src="./js/highcharts.js"></script>
     <script type="text/javascript" src="./js/swiper-3.4.0.jquery.min.js"></script>
     <script type="text/javascript" src="./js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script>
@@ -470,6 +478,62 @@
 
         }
     </script>
+
+    <script>
+        var chart = Highcharts.chart('container', {
+            title: {
+                text: '销售统计'
+            },
+            subtitle: {
+                text: ''
+            },
+            yAxis: {
+                title: {
+                    text: ''
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 2
+                }
+            },
+            series: [
+            {
+                name: '销售额',
+                data: [12, 32, 4, 44, 12, 54],
+                color:"#ff0000"
+            }, 
+            {
+                name: '利润',
+                data: [87, 89, 56, 45, 34, 76]
+            }
+            ],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+        });
+    </script>
+
+    
 
 </body>
 

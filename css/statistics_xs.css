@@ -405,8 +405,16 @@
     font-size: 14px;
 }
 
-
-
-
-
 /* 销售商品排行结束 */
+
+/* canvas */
+#cv{
+    width: 300px;
+    height: 200px;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+}
+#divContainer{
+    margin-top: 20px;
+    text-align: center;
+}
