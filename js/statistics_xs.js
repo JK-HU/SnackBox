@@ -21,7 +21,6 @@
             return false;
         }
 
-
         // ajax_queryDate();
     });
     
