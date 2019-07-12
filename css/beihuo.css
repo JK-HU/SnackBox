@@ -406,4 +406,27 @@
 
 /* 模板添加成功结束 */
 
+/* 配送单添加成功 */
+.stockTrmalatec{
+    width: 80%;
+    height: auto;
+    background:#fafafc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+    padding: 10px 1px;
+    display: none;
+}
+.stockTrmalatec i{font-size: 5rem;color: #0bb20c}
+.stockTrmalatec p{font-size: 16px;margin: 10px 0}
+.stockTrmalatec a{display: block;font-size: 14px;width: 100%;line-height: 40px;text-align: center;color: #0bb20c;border-top: 1px solid #ddd}
+
+
+
+
+/* 配送单添加成功结束 */
+
+
 

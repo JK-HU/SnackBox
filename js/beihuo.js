@@ -92,11 +92,11 @@
     $('.moban').bind('click',function() {
         $('.cover').attr('style','display:block');
         $('.card').attr('style','display:block');
-
-        $('.card_cancel').bind('click',function() {
-            $('.cover').attr('style','display:none');
-            $('.card').attr('style','display:none');
-        });
+    });
+    // 弹框取消
+    $('.card_cancel').bind('click',function() {
+        $('.cover').attr('style','display:none');
+        $('.card').attr('style','display:none');
     });
 
     // 自动备货
@@ -105,16 +105,17 @@
         $('.cover').attr('style','display:block');
     });
 
-    // 控制通用模板模板名称
+    // 生成配送单
     $('.preview_peis').on('click',function(event) {
         $('.stockTrmalate').attr('style','display:none');
-        $('.stockTrmalateb').attr('style','display:block');
+        $('.stockTrmalatec').attr('style','display:block');
         $('.cover').attr('style','display:block');
-        $('body').attr('style','ovflow:auto');
+        $('body').attr('style','ovflow:hidden');
 
         $('.canel_tb').bind('click',function(event) {
-            $('.stockTrmalateb').attr('style','display:none');
+            $('.stockTrmalatec').attr('style','display:none');
             $('.cover').attr('style','display:none');
+            $('body').attr('style','ovflow:auto');
         });
 
         event.stopPropagation();
@@ -138,7 +139,30 @@
             success : function() {},
             error : function() {}
         })
+    });
 
+    // 其他盒子备货
+    $('.other_bh').bind('click',function() {
+        let templateId = $(this).attr('data-templateId');
+        $('.cover').attr('style','display:none');
+        $('.card').attr('style','display:block');
+
+        $('.stockTrmalatec').attr('style','display:none')
+
+        // $('.autoBeiHuo').attr('style','display:block');
+        $('.cover').attr('style','display:block');
+
+
+        
+        $.ajax({
+            url:'',
+            data : {
+                templateId : templateId
+            },
+            type : 'POST',
+            success : function() {},
+            error : function() {}
+        })
     });
 
     

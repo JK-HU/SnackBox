@@ -1,0 +1,4 @@
+.model{width: auto;height: auto;padding: 10px 5px;background: #fff}
+.model .model_line{width: auto;height: auto}
+.model .model_line > p{font-size: 14px;margin: 9px auto}
+.model .model_line .links{width: 92%;height: auto;margin: 20px auto 10px auto;display: block;padding: 4px;word-break: break-all;text-align: left}
