@@ -1,6 +1,6 @@
 (function() {
     // 点击未查
-    $('.con').on('click','.product_r_state',function() {
+    $('.con').on('click','.product_r_state',function(event) {
         var cur_comondity_id = $(this).parent().parent().parent().attr('data-commodid'); //点击查看这个商品的id
         $.post('url',{cur_comondity_id:cur_comondity_id},function(data) {
             
@@ -14,6 +14,9 @@
             return false;  
         }
          * */
+
+        event.stopPropagation();
+        
         
     });
 
@@ -44,6 +47,31 @@
             // window.location.href='pdian.html';
         });
 
+    });
+
+
+    // 加 盘点 add_i
+    $('.con').on('click','.add_i',function(event) {
+        // console.log($(this).siblings('.add_product_text'))
+        let productNum = parseInt($(this).siblings('.add_product_text').text());
+        console.log(productNum)
+        productNum++;
+        $(this).next().text(productNum);
+
+        event.stopPropagation();
+    });
+
+    // 减 盘点 reduce_i
+    $('.con').on('click','.reduce_i',function(event) {
+        let productNum = parseInt($(this).siblings('.add_product_text').text());
+        productNum--;
+        if (productNum <= 0){
+            productNum = 0
+        }
+         
+        $(this).prev().text(productNum);
+
+        event.stopPropagation();
     });
 
     
