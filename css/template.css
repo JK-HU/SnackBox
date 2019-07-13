@@ -26,6 +26,10 @@
     width: 70px;
     height: 28px;
     display: inline-block;
+    border:none;
+    border-radius: 5px;
+    background: #09bb07;
+    color: #fff;
 
 }
 
