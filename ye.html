@@ -9,7 +9,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <title>校园零食</title>
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/deliveryCore.css">
+    <link rel="stylesheet" href="./css/ye.css">
     <link rel="stylesheet" href="./css/iconfont_peis.css">
     <link rel="stylesheet" type="text/css" href="./css/swiper-3.3.1.min.css" />
     <style>
@@ -44,7 +44,7 @@
         .tab {
             display: flex;
             line-height: 51px;
-            position: fixed;
+            position: relative;
             top: 0px;
             width: 100%;
             z-index: 999;
@@ -60,8 +60,8 @@
         }
 
         .tab .active {
-            border-bottom: 1px #f50 solid;
-            color: #f50;
+            border-bottom: 1px #27AE60 solid;
+            color: #27AE60;
         }
 
         .panel {
@@ -160,77 +160,34 @@
 
 <body>
 
+    <!-- 余额 -->
+    <p style="display: block;margin: 25px 0;font-size: 14px">余额 <span style="color:red;">5</span> 元</p>
+    <!-- 余额结束 -->
+
+    <!-- 输入钱数 -->
+    <input type="text" id="money" placeholder="输入提现金额" value="" />
+    <!-- 输入钱数结束 -->
+
+    <!-- 提现方式 -->
+    <button class="primary" id="wechat" style="line-height: 45px;margin: 18px auto;">微信提现</button>
+    <button class="primary" id="alipay" style="background:#03a9f4;line-height: 45px;margin: 18px auto;">支付宝提现</button>
+    <!-- 提现方式结束 -->
+
+
+
+
 
     <div class="container">
+
         <div class="tab">
-            <a class="active" data-type="weips" href="javascript:;">待配送</a>
-            <a href="javascript:;" data-type="yips">已配送</a>
-            <a href="javascript:;" data-type="buck">补回仓库</a>
-            <a href="javascript:;" data-type="huis">已回收</a>
+            <a class="active" data-type="qbjl" href="javascript:;">全部记录</a>
+            <a href="javascript:;" data-type="rzjl">入账记录</a>
+            <a href="javascript:;" data-type="txjl">提现记录</a>
+            <a href="javascript:;" data-type="tkjl">退款记录</a>
         </div>
-
-        <!-- 搜索框 -->
-        <div class="deliver_search">
-            <div class="deliver_search_con">
-                <input type="text" class="search_deliver" placeholder="输入搜索名称" />
-                <a href="javascript:" class="date">日期</a>
-                <button class="search_btn">搜索</button>
-            </div>
-        </div>
-        <!-- 搜索框结束 -->
-
-        <!-- 选择日期 -->
-        <div class="choice_date">
-            <div class="choice_date_con">
-                <span>选择日期</span>
-                <input class="conlipt ptime" type="date" data-servertime="servertime" placeholder="请选择服务时间">
-            </div>
-        </div>
-        <!-- 选择日期结束 -->
-
-        <!-- 排序 -->
-        <div class="sort">
-            <div class="sort_con">
-                    <a href="javascript:" class="zx" data-attrs="zxsort"> <i class="iconfont iconzx"></i> <span class="sort_txt">正序</span></a>
-                    <a href="javascript:" class="qt" data-attrs="qtsort" style="text-align: right"><span>其他排序方式</span></a>
-                <!-- 排序方式 -->
-                <ul class="qtul">
-                    <li class="sort_li" data-attrs="name_sort"><a href="javascript:">名称排序</a></li>
-                    <li class="sort_li" data-attrs="times_sort"><a href="javascript:">时间排序</a></li>
-                </ul>
-                
-            </div>
-        </div>
-        <!-- 排序结束 -->
-
-        <!-- 已经补货列表 -->
-        <div class="buhuo_list">
-            <div class="buhuo_list_con">
-                <span>已经补货列表, 50条</span>
-                <!-- <a href="javascript:" class="batchOperation">批量操作</a> -->
-            </div>
-        </div>
-        <!-- 已经补货列表结束 -->
-
-        <!-- 弹框 -->
-        <div class="cover"></div>
-        <!-- 弹框_功能 全部 -->
-        <div class="card card_all">
-            <div class="card_tit card_all_title">新21号403</div>
-            <div class="card_table_wrap">
-                <ul class="card_ul">
-                    <li class="card_li"><a href="details_bhuo.html">查看详情</a></li>
-
-                    <li class="card_li cancel"><a href="javascript:">取消</a></li>
-                    <div style="clear: both"></div>
-                </ul>
-            </div>
-        </div>
-            <!-- 弹框_功能结束 -->
-        <!-- 弹框结束 -->
 
         <!-- swiper2 -->
-        <div class="swiper-container">
+        <div class="swiper-container" style="margin-top: 10px">
             <div class="swiper-wrapper w">
                 <div class="swiper-slide d" style="margin-top:0">
                     <div class="swiper-container2">
@@ -238,43 +195,13 @@
                             <div class="swiper-slide list-group" data-attrs="group_a">
                                 <div class="con">
 
-                                    <a href="javascript:" class="commodity_a">
-                                        <div class="cell">
-                                            <div class="cell_a">
-                                                <span class="delivery_title">配送完毕：新21号406</span>
-                                                <span class="create_time">17855110942 创建 2019-04-25 22:31:19</span>
-                                                <span class="delivery_time">17855110942已经配送 时间2019-04-25 22:31:19</span>
-
-                                            </div>
-                                            <div class="cell_b">
-                                                <div class="cell_b_w">
-                                                    <span class="cell_b_num">6</span>种商品,共 <span class="cell_b_prise">19.5</span> 元
-                                                </div>
-                                            </div>
-                                            <div class="cell_c" style="display: none">
-                                                <span class="bindIcon" data-iconType='false'><i class="iconfont iconwxuanz"></i></span>
-                                            </div>
+                                    <div class="cell">
+                                        <div class="r">
+                                            <span>id号</span>入账 <span>2342</span> 元,商品[1]茶派茶玫瑰荔枝茶 x 1件
+                                            2019-07-13 14:59:41 订单8830122
                                         </div>
-                                    </a>
-
-                                    <a href="javascript:" class="commodity_a">
-                                        <div class="cell">
-                                            <div class="cell_a">
-                                                <span class="delivery_title">配送完毕：新21号406</span>
-                                                <span class="create_time">17855110942 创建 2019-04-25 22:31:19</span>
-                                                <span class="delivery_time">17855110942已经配送 时间2019-04-25 22:31:19</span>
-
-                                            </div>
-                                            <div class="cell_b">
-                                                <div class="cell_b_w">
-                                                    <span class="cell_b_num">6</span>种商品,共 <span class="cell_b_prise">19.5</span> 元
-                                                </div>
-                                            </div>
-                                            <div class="cell_c" style="display: none">
-                                                <span class="bindIcon" data-iconType='false'><i class="iconfont iconwxuanz"></i></span>
-                                            </div>
-                                        </div>
-                                    </a>
+                                        <div class="l">余额5元</div>
+                                    </div>
 
                                 </div>
                             </div>
@@ -285,29 +212,23 @@
             <div class="swiper-scrollbar"></div>
         </div>
 
-        <!-- 底部footer -->
+        <!-- 底部 -->
         <div class="footer">
-            <ul>
-                <li>
+            <ul style="width: 50%">
+                <li style="width: 50%">
                     <a href="index.html">首页</a>
                 </li>
-                <li>
-                    <a href="retail_admin.html">盒子</a>
-                </li>
-                <li>
-                    <a href="deliveryCore.html">配送</a>
-                </li>
-                <li>
+                <li style="width: 50%">
                     <a href="mine.html">我的</a>
                 </li>
+                <div class='clear'></div>
             </ul>
-            
         </div>
-        <!-- 底部footer结束 -->
+
     </div>
 
     <script type="text/javascript" src="./js/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/deliveryCore.js"></script>
+    <script type="text/javascript" src="./js/ye.js"></script>
     <script type="text/javascript" src="./js/swiper-3.4.0.jquery.min.js"></script>
     <script type="text/javascript" src="./js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script>

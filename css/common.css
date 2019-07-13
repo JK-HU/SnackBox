@@ -138,3 +138,5 @@ a:link,a:active,a:visited,a:hover {
 
 /* 大按钮 */
 .primary{display: block;width:95%;line-height:40px;background:#2ECC71;color: #fff;border: none;margin: 30px auto;border-radius: 5px;font-size: 15px;}
+/* 清楚浮动 */
+.clear{display: block;clear: both;}

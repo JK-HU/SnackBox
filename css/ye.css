@@ -1,0 +1,7 @@
+.con{width: auto;line-height: 20px;}
+.con .cell{width: 95%;line-height: 20px;margin: 0 auto;display: flex;padding: 4px 1px;border-bottom: 1px solid #ddd}
+.con .cell .r{flex: 3;text-align: left}
+.con .cell span{}
+.con .cell .l{flex: 1}
+#money{width: 100%;line-height: 75px;background: #fff;margin: 20px 0;color: #000;text-align: center;font-weight: bold;font-size: 2rem}
+

@@ -1,0 +1,85 @@
+.wrap{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2.5rem;
+    overflow: hidden;
+}
+.wrap .header{
+    width: 96%;
+    height: auto;
+    padding: 0 8px;
+    margin-bottom: 2rem;
+    display: flex;
+}
+.wrap .header .header_r{
+    flex: 1;
+}
+.wrap .header .header_r img{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    background: #d9d9d9;
+    margin-top: 10px;
+    float: left;
+}
+.wrap .header .header_r span{display: inline-block}
+.wrap .header .header_r .u_phone{
+    width: 117px;
+    height: 26px;
+    margin: 10px auto 0 6px;
+    color: #000;
+    float: left;
+}
+.wrap .header .header_r .u_Authentication{
+    width: 117px;
+    height: 26px;
+    margin-left: 6px;
+    float: left;
+
+}
+
+.wrap .header .header_l{
+    flex: 1;
+}
+.wrap .header .header_l a:nth-child(1){
+    display: inline-block;
+    width: 82px;
+    height: 25px;
+    background: #fff;
+    margin-top: 16px;
+    text-align: center;
+    line-height: 25px;
+    color: #000
+}
+.wrap .header .header_l a:nth-child(2){
+    display: inline-block;
+    width: 82px;
+    height: 25px;
+    background: #fff;
+    margin-top: 16px;
+    text-align: center;
+    line-height: 25px;
+    color: #000
+}
+.line{width: auto;line-height: 40px;display: flex;border-bottom: 1px solid #ddd;padding: 4px 8px; background: #fff;}
+.line img{width: 25px;height: 25px;margin: 10px 10px 0 10px;}
+.line a{flex: 1;line-height: 40px;}
+.line a span{float: left;color: #000;font-size: 15px}
+.line a .r{float: right;display: block;width: 60%;line-height: 40px;text-align: right;color: #999}
+.iconR::after{
+    content: " ";
+    display: inline-block;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height: 6px;
+    width: 6px;
+    border-width: 2px 2px 0 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    position: relative;
+    top: -2px;
+    top: -1px;
+    margin-left: .3em;
+}
+
+
